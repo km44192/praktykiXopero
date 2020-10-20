@@ -1,0 +1,13 @@
+C:\Users\dak10\Documents\Visual Studio 2019\stworzone_programy\Praktyki_Hello_World\Praktyki_Hello_World\obj\Debug\netcoreapp3.1\Praktyki_Hello_World.csprojAssemblyReference.cache
+C:\Users\dak10\Documents\Visual Studio 2019\stworzone_programy\Praktyki_Hello_World\Praktyki_Hello_World\obj\Debug\netcoreapp3.1\Praktyki_Hello_World.AssemblyInfoInputs.cache
+C:\Users\dak10\Documents\Visual Studio 2019\stworzone_programy\Praktyki_Hello_World\Praktyki_Hello_World\obj\Debug\netcoreapp3.1\Praktyki_Hello_World.AssemblyInfo.cs
+C:\Users\dak10\Documents\Visual Studio 2019\stworzone_programy\Praktyki_Hello_World\Praktyki_Hello_World\obj\Debug\netcoreapp3.1\Praktyki_Hello_World.csproj.CoreCompileInputs.cache
+C:\Users\dak10\Documents\Visual Studio 2019\stworzone_programy\Praktyki_Hello_World\Praktyki_Hello_World\bin\Debug\netcoreapp3.1\Praktyki_Hello_World.exe
+C:\Users\dak10\Documents\Visual Studio 2019\stworzone_programy\Praktyki_Hello_World\Praktyki_Hello_World\bin\Debug\netcoreapp3.1\Praktyki_Hello_World.deps.json
+C:\Users\dak10\Documents\Visual Studio 2019\stworzone_programy\Praktyki_Hello_World\Praktyki_Hello_World\bin\Debug\netcoreapp3.1\Praktyki_Hello_World.runtimeconfig.json
+C:\Users\dak10\Documents\Visual Studio 2019\stworzone_programy\Praktyki_Hello_World\Praktyki_Hello_World\bin\Debug\netcoreapp3.1\Praktyki_Hello_World.runtimeconfig.dev.json
+C:\Users\dak10\Documents\Visual Studio 2019\stworzone_programy\Praktyki_Hello_World\Praktyki_Hello_World\bin\Debug\netcoreapp3.1\Praktyki_Hello_World.dll
+C:\Users\dak10\Documents\Visual Studio 2019\stworzone_programy\Praktyki_Hello_World\Praktyki_Hello_World\bin\Debug\netcoreapp3.1\Praktyki_Hello_World.pdb
+C:\Users\dak10\Documents\Visual Studio 2019\stworzone_programy\Praktyki_Hello_World\Praktyki_Hello_World\obj\Debug\netcoreapp3.1\Praktyki_Hello_World.dll
+C:\Users\dak10\Documents\Visual Studio 2019\stworzone_programy\Praktyki_Hello_World\Praktyki_Hello_World\obj\Debug\netcoreapp3.1\Praktyki_Hello_World.pdb
+C:\Users\dak10\Documents\Visual Studio 2019\stworzone_programy\Praktyki_Hello_World\Praktyki_Hello_World\obj\Debug\netcoreapp3.1\Praktyki_Hello_World.genruntimeconfig.cache
