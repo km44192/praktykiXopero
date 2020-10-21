@@ -1,0 +1,36 @@
+1. system tworzenia obrazu plików po dokonaniu w nich zmian( dotyczy tylko modyfikowanych plików)
+2  w przypadku kopii zapasowych usuwa się pliki zawierające te same dane
+3 rodzaje kompresji(stratna/bezstratna) stopnie kompresji zależą od entropii danych
+4 szyfry symetryczne- klucz dla kodowania i dekodowania jest taki sam. Algorytm AES(advanced Encryption standard) tryb ECB jest szybkim trybem szyfrowania w którym 
+5 Przechowywanie plików które mogą zawierać dane poufne lub potrzebne w dalszej ewidencji
+6 Pełna - kopia wszystkich wyzaczonych do zmagazynowania plików . Różnicowa - dodawanie do pełnej kopii plików w których zostały dokonane zmiany od momentu zrobienia kopii pełnej
+przyrostowa - dogrywanie do kopii tylko zmienionych plików bez pamiętania poprzednich zmian
+7 ?
+8 Rodzaj zmiennych tekstowych przechowujących odnośniki do lokalizacji na dyskach np do plików folderów oraz samych dysków twardych.
+9 Harmonogram ma na celu wspomóc użytkownika podczas wykonywania czynności cyklicznych np. tworzenie punktu przywracania o zadanej godzinie, czy też tworzenie raportów albo kopii zapasowych
+10 są to pliki które mają atrybut ukryty aby zapobiec przypadkowemu dostępowi do nich. w systemach linux/Unix dodaje się kropkę przed nazwę aby oznaczyć plik jako niewidoczny
+
+11 Filtry Plików wykorzystuje się podczas kopii zapasowych do określenia jakie pliki mają do niej trafić 
+12 Usługi systemowe to aplikacje systemowe, które do poprawnego działania nie potrzebują ingerencji użytkownika. Można je wyłączyć włączyć lub ustawić aby działały
+ dopiero po uruchomieniu poszczególnego fragmentu systemu/aplikacji
+13 Active Directory hierarchiczna struktura danych przechowująca informacje o sieci, użytkownikach sieci i ich uprawnieniach. oraz informacje o domenie w której się znajdują
+14 wirtualizacje można uznać za rozwinięcie emulacji, Wirtualizacja pozwala na postawienie kilku systemów(maszyn) równolegle z głównym systemem operacyjnym
+ parawirtualizacja - system jest świadomy że jest poddany wirtualizacji, ale instrukcje wrażliwe są w pełni przekazywane do procesora.
+
+Pełna wirtualizacja - symulowane są wszystkie elementy fizycznego komputera, sterowniki,BIOS, CPU, GPU i inne elementy
+dostępne akceleracje (sprzętowe)lepsze i programowe
+
+Wirtualizacja na poziomie systemu operacyjnego - niskopoziomowy dostęp do sprzętu, pozwala na symbiotyczne działanie systemu matki i systemu gościa.
+
+
+programy do wirtualizacji
+VMware
+Xen
+OpenVZ
+Hyper-V
+VirtualBox
+VServer
+KVM
+QEMU
+15 w przypadku baz danych redundancja jest porządana inaczej zwana atomizacją.
+16 Pod pojęciem chmura mogą kryć się serwery obliczeniowe oraz serwery magazynujące.
