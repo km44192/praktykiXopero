@@ -1,0 +1,100 @@
+1 Network attached storage  lokalny serwer danych pozwala na przechowywanie danych przez jednego lub więcej użytkowników
+2
+QNAP - firma tworząca własne urządzenia przeznaczone do pracy w sieci głównie urządzenia pamięci masowej i kamer
+Synology - podobnie jak QNAP
+AsusTor - podobnie jak QNAP
+Netgear - podobnie
+
+3 Narzędzie które ma umożliwić pracę z oprogromowaniem .net Framework( C#) w środowisku linux
+w skład niego wchodzą core components
+stos developerski
+stos zgodności z Windowsem
+4 programy służące do śledzenia zmian w kodzie źródłowym stosowany w firmach przy projektach w których udział bierze wiele osób
+są 3 rodzaje
+lokalne
+RCS
+SCCS
+rozproszone
+Bazaar
+Git
+GNU ARch
+Mercurial
+svk
+scentralizowane
+CVS
+subversion
+CSSC
+JEDI VSC
+
+
+5 Strony wspierające wersjonowanie
+GitHub, GitLab, BitBucket,Launchpad,SourceForge,Git Bucket,
+
+6 grupa jednostek komputerowych połączonych ze sobą, aby zapewnić równoległe przetwarzanie
+można podzielić je na 3 typy
+wydajnościowe - łaczy się je aby kilka komputerów jednocześnie zajęło się obliczaniem jednego większego zadania.
+nizawodnościowe - w razie wystąpienia usterki jednej jednostki z klastra inna przejmuje jego zadania.
+równoważące obciążenie 
+7 pomieszczenia/budynki których zadaniem jest przechowywanie infrastruktury sieciowej serwerów z danymi oraz urządzeń ifnrastruktury sieciowej.
+8 RAID 0,1,2,3,4,5,6 0+1, 1+0
+
+raid 0 - łączenie dysków które tworzą jedną wielką przestrzeń dyskową przyspiesza transfer
+raid 1 - mirroring pojemnośc voluminu zależna jest od najmniejszego dysku w raidzie lustrzane kopie na każdym dysku
+raid 2 - dane są paskowane na dyskach, ale potrzeba conajmniej 3 dysku log N dysków do obsługi sumy kontrolnej
+raid 3 - podobnie jak raid 2 tylko do obsługi sum kontrolnych przeznaczony jest jeden dysk
+raid 4 - podobnie jak raid 3 tylko dane są przechowywane w blokach zamiast bitach
+raid 5 - ten poziom ma na celu zwiększenie bezpieczeństwa danych w przypadku awarii jednego z dysków, istnieje możliwośc przywrócenia wszystkich danych z uszkodzonego dysku, ponieważ sumy kontrolne porozrzucane są w całej macierzy
+raid 6 - na tym poziomie macierzy zostaje podwojone wartości sum kontrolnych
+
+raid 0+1 ma na celu zwiększyć bezpieczeństwo macieży raid 0. każdy z bloków jest conajmniej raz w kopii lustrzanej.
+raid 1+0 połączenie podobne co do 0+1 tylko każdy z bloków jest poddany operacji kopiowania, a potem łączy się do raid 0
+9
+Windows
+FAT32
+exFAT
+NTFS
+LINUX
+ext3 system plików z księgowaniem oraz przyśpieszonymi operacjami na katalogach
+ext4 system plików polepszający alokację na dysku, większy limit oraz umożliwia defragmentacje
+UFS
+HFS+
+
+10 hierarchiczna baza danych do której system Windows ciągle się odwołuje podczas działania
+zapisana jest w niej konfiguracja użytkowników, konfiguracja sprzętu, konfiguracja aplikacji i wiele innych.
+11
+Windows
+foldery:
+Windows
+System32
+
+Users
+ProgramFiles(x86)
+ProgramFiles
+ProgramData
+Linux:
+/bin
+boot
+cdrom
+dev
+etc
+home
+lib
+lost+found
+media
+mnt
+opt
+proc
+root
+run
+sbin
+selinux
+srv
+sys
+tmp
+usr
+var
+
+
+12 Amazon Web Service EC2- chmura obliczeniowa S3 chmura magazynowa 
+Środowisko chmury obliczeniwej oraz magazynowej
+13 Oprogramowanie do obsługi projktów obliczeniowych w chmurze
