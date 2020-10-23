@@ -1,4 +1,4 @@
-1 Network attached storage  lokalny serwer danych pozwala na przechowywanie danych przez jednego lub więcej użytkowników
+1 Network attached storage -  lokalny serwer danych pozwala na przechowywanie danych przez jednego lub więcej użytkowników
 2
 QNAP - firma tworząca własne urządzenia przeznaczone do pracy w sieci głównie urządzenia pamięci masowej i kamer
 Synology - podobnie jak QNAP
@@ -11,16 +11,16 @@ stos developerski
 stos zgodności z Windowsem
 4 programy służące do śledzenia zmian w kodzie źródłowym stosowany w firmach przy projektach w których udział bierze wiele osób
 są 3 rodzaje
-lokalne
+""lokalne
 RCS
 SCCS
-rozproszone
+""rozproszone
 Bazaar
 Git
 GNU ARch
 Mercurial
 svk
-scentralizowane
+""scentralizowane
 CVS
 subversion
 CSSC
