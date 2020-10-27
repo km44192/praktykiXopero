@@ -7,14 +7,14 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="9f009c14-4c99-44b3-bf99-390100e7bb5d"
+    Name="5f974782-d296-4835-9ce6-8814cf6c516b"
     Publisher="CN=dak10"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="9f009c14-4c99-44b3-bf99-390100e7bb5d" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="5f974782-d296-4835-9ce6-8814cf6c516b" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>Obcy_atakuja</DisplayName>
+    <DisplayName>TenObcy</DisplayName>
     <PublisherDisplayName>dak10</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -30,12 +30,12 @@
   <Applications>
     <Application Id="App"
       Executable="$targetnametoken$.exe"
-      EntryPoint="Obcy_atakuja.App">
+      EntryPoint="TenObcy.App">
       <uap:VisualElements
-        DisplayName="Obcy_atakuja"
+        DisplayName="TenObcy"
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png"
-        Description="Obcy_atakuja"
+        Description="TenObcy"
         BackgroundColor="transparent">
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png"/>
         <uap:SplashScreen Image="Assets\SplashScreen.png" />

@@ -1,0 +1,77 @@
+﻿<Page
+    x:Class="TenObcy.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TenObcy"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource  AppBarBackgroundThemeBrush}">
+    <Page.Resources>
+        <ControlTemplate x:Key="EnemyTemplate" TargetType="ContentControl">
+            <Grid>
+                <Ellipse Height="100" Stroke="RED" Fill="Red" Width="100"/>
+            </Grid>
+        </ControlTemplate>
+    </Page.Resources>
+
+    <Grid Style="{StaticResource HandwritingViewCandidatesBarStyle}" Background="#AC000000" VerticalAlignment="Center" HorizontalAlignment="Center" Height="1078" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="161"/>
+            <ColumnDefinition Width="1474"/>
+            <ColumnDefinition Width="283"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="140"/>
+            <RowDefinition Height="515*"/>
+            <RowDefinition Height="113*"/>
+        </Grid.RowDefinitions>
+
+
+        <TextBlock HorizontalAlignment="Left" Margin="160,29,0,0" Text="Ratuj Ludzi" Foreground="White" FontSize="50px" TextWrapping="Wrap" VerticalAlignment="Top" Style="{ThemeResource TitleTextBlockStyle}" Height="75" Width="295" Grid.ColumnSpan="2"/>
+
+
+        <Button Style="{StaticResource NavigationBackButtonSmallStyle}" BorderBrush="White" BorderThickness="3" Margin="62,0,0,0" Width="50"  Foreground="White" Height="32"/>
+        <Button Click="startButton_Click" Content="Start!" Margin="41,59,0,0" Grid.Row="2" VerticalAlignment="Top" Height="40" Width="93" FontSize="24px" Background="#33FFFFFF" BorderBrush="#FFFBF6F6"/>
+        <ProgressBar Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="0,70,0,0" Grid.Row="2" Width="1464" VerticalAlignment="Top"/>
+        <StackPanel x:Name="Enemy" Grid.Column="2" HorizontalAlignment="Left" Margin="66,765,0,0" Orientation="Vertical" Grid.Row="1" VerticalAlignment="Top" Grid.RowSpan="2">
+            <TextBlock FontSize="25px" Text="Ich unikaj" Foreground="White"  TextWrapping="Wrap" Height="49" Width="117" Style="{StaticResource SubheaderTextBlockStyle}"/>
+            <ContentControl x:Name="enemy" Content="ContentControl" Height="100" Width="100" Template="{StaticResource EnemyTemplate}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="1.235,0.648" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" FocusVisualPrimaryBrush="{x:Null}" FocusVisualSecondaryBrush="{x:Null}" Foreground="{x:Null}" Background="Red">
+                <ContentControl.RenderTransform>
+                    <CompositeTransform Rotation="0.635" TranslateX="-0.166" TranslateY="0.812"/>
+                </ContentControl.RenderTransform>
+            </ContentControl>
+
+        </StackPanel>
+        <Canvas x:Name="playArea" Margin="0,3,0,166" Grid.Row="1" FocusVisualPrimaryBrush="#FF01250E" FocusVisualSecondaryBrush="#99FF0000" Grid.ColumnSpan="3" Grid.RowSpan="2" RenderTransformOrigin="0.5,0.5" >
+            <Canvas.RenderTransform>
+                <CompositeTransform SkewY="-0.279" TranslateY="-3.995"/>
+            </Canvas.RenderTransform>
+            <Canvas.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF559B01"/>
+                    <GradientStop Color="#FFD1EEAF" Offset="1"/>
+                </LinearGradientBrush>
+            </Canvas.Background>
+            <StackPanel x:Name="human" Canvas.Left="748" Orientation="Vertical" Canvas.Top="390" d:IsHidden="True">
+                <Ellipse Height="50" Stroke="Black" Width="50" Fill="#FF060EB9"/>
+                <Rectangle Height="40" Stroke="Black" Width="58" RenderTransformOrigin="4.74,3.59" Fill="#FF060EB9"/>
+            </StackPanel>
+            <Rectangle Height="70" Width="70" Canvas.Left="1251.154" Canvas.Top="224.586" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" FocusVisualSecondaryBrush="{x:Null}">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FFE1F704" Offset="1"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+                <Rectangle.RenderTransform>
+                    <CompositeTransform Rotation="44.577"/>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <TextBlock x:Name="gameOverText" Text="Koniec gry" TextWrapping="Wrap" Canvas.Left="700" Canvas.Top="319" FontSize="100" FontFamily="Arial Black" Width="711" FontStyle="Italic" FontWeight="Bold"/>
+        </Canvas>
+
+
+
+    </Grid>
+</Page>
