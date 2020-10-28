@@ -3,3 +3,4 @@ Start 22-10-2020 8:00 Koniec 22-10-2020 16:00 dodanie 2 częsci notatek do repo
 Start 23-10-2020 8:00 Koniec 23-10-2020 16:00 zbieranie informacji na dzień 3 teoretyczny
 Start 26-10-2020 8:00 Koniec 26-10-2020 16:00 koniec części teoretycznej
 Start 27-10-2020 10:00 Koniec 27-10-2020 18:00 aplikacja alien cz1
+Start 28-10-2020 9:00 Koniec 28-10-2020 17:00 dodanie aplikacji o zakotwiczaniu i dowolnymi funkcjami
