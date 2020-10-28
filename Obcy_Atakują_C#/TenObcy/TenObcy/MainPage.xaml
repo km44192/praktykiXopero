@@ -32,8 +32,8 @@
 
 
         <Button Style="{StaticResource NavigationBackButtonSmallStyle}" BorderBrush="White" BorderThickness="3" Margin="62,0,0,0" Width="50"  Foreground="White" Height="32"/>
-        <Button Click="startButton_Click" Content="Start!" Margin="41,59,0,0" Grid.Row="2" VerticalAlignment="Top" Height="40" Width="93" FontSize="24px" Background="#33FFFFFF" BorderBrush="#FFFBF6F6"/>
-        <ProgressBar Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="0,70,0,0" Grid.Row="2" Width="1464" VerticalAlignment="Top"/>
+        <Button x:Name="grastart" Click="startButton_Click" Content="Start!" Margin="41,59,0,0" Grid.Row="2" VerticalAlignment="Top" Height="40" Width="93" FontSize="24px" Background="#33FFFFFF" BorderBrush="#FFFBF6F6"/>
+        <ProgressBar x:Name="progresBar" Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="0,70,0,0" Grid.Row="2" Width="1464" VerticalAlignment="Top"/>
         <StackPanel x:Name="Enemy" Grid.Column="2" HorizontalAlignment="Left" Margin="66,765,0,0" Orientation="Vertical" Grid.Row="1" VerticalAlignment="Top" Grid.RowSpan="2">
             <TextBlock FontSize="25px" Text="Ich unikaj" Foreground="White"  TextWrapping="Wrap" Height="49" Width="117" Style="{StaticResource SubheaderTextBlockStyle}"/>
             <ContentControl x:Name="enemy" Content="ContentControl" Height="100" Width="100" Template="{StaticResource EnemyTemplate}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="1.235,0.648" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" FocusVisualPrimaryBrush="{x:Null}" FocusVisualSecondaryBrush="{x:Null}" Foreground="{x:Null}" Background="Red">
@@ -57,7 +57,7 @@
                 <Ellipse Height="50" Stroke="Black" Width="50" Fill="#FF060EB9"/>
                 <Rectangle Height="40" Stroke="Black" Width="58" RenderTransformOrigin="4.74,3.59" Fill="#FF060EB9"/>
             </StackPanel>
-            <Rectangle Height="70" Width="70" Canvas.Left="1251.154" Canvas.Top="224.586" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" FocusVisualSecondaryBrush="{x:Null}">
+            <Rectangle x:Name="target" Height="70" Width="70" Canvas.Left="1251.154" Canvas.Top="224.586" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" FocusVisualSecondaryBrush="{x:Null}">
                 <Rectangle.Fill>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="Black"/>

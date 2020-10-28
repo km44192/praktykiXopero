@@ -26,14 +26,39 @@ namespace TenObcy
     public sealed partial class MainPage : Page
     {
         Random random = new Random();
-        //Random random = new Random();
+        DispatcherTimer enemyTimer = new DispatcherTimer();
+        DispatcherTimer targetTimer = new DispatcherTimer();
+      //  ProgressBar progressBar = new ProgressBar();
+        
+        bool humanCaptured = false;
         public MainPage()
         {
+            
             this.InitializeComponent();
+            enemyTimer.Tick += enemyTimer_Tick;
+            enemyTimer.Interval = TimeSpan.FromSeconds(2);
+
+            targetTimer.Tick += targetTimer_Tick;
+            targetTimer.Interval = TimeSpan.FromSeconds(.1);
+            
         }
         private void startButton_Click(object sender, RoutedEventArgs e) {
-            AddEnemy();
+            StartGame();
         }    
+
+        void enemyTimer_Tick(object sender,object e)
+        {
+            AddEnemy();
+        }
+        void targetTimer_Tick(object sender, object e)
+        {
+            progresBar.Value += 1;
+            if (progresBar.Value >= progresBar.Maximum) 
+            EndTheGame();
+        }
+
+   
+
         private void AddEnemy()
         {
             ContentControl enemy = new ContentControl();
@@ -57,6 +82,26 @@ namespace TenObcy
             storyboard.Children.Add(animation);
             storyboard.Begin();
         
+        }
+        void EndTheGame() {
+            if(!playArea.Children.Contains(gameOverText))
+            enemyTimer.Stop();
+            targetTimer.Stop();
+            humanCaptured = false;
+            grastart.Visibility = Visibility.Visible;
+            playArea.Children.Add(gameOverText);
+        
+        }
+        private void StartGame() {
+            human.IsHitTestVisible = true;
+            humanCaptured = false;
+            progresBar.Value = 0;
+            grastart.Visibility = Visibility.Collapsed;
+            playArea.Children.Clear();
+            playArea.Children.Add(target);
+            playArea.Children.Add(human);
+            enemyTimer.Start();
+            targetTimer.Start();
         }
     }
 
