@@ -1,0 +1,28 @@
+﻿<Window x:Class="Wlasna_apka_xaml.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wlasna_apka_xaml"
+        mc:Ignorable="d"
+        Background="Black"
+        Foreground="White"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button x:Name="b_komunikat" Content="Pokaż komunikat" HorizontalAlignment="Left" Margin="164,0,0,0" VerticalAlignment="Center" Click="b_komunikat_Click"/>
+        <Button x:Name="b_condition" Content="if/else" Grid.Column="1" HorizontalAlignment="Left" Margin="185,57,0,0" VerticalAlignment="Top" Click="b_condition_Click"/>
+        <Button x:Name="b_nextcondition" Content="Sprawzenie kolejnego warunku" HorizontalAlignment="Left" Margin="127,59,0,0" Grid.Row="1" VerticalAlignment="Top" Click="b_nextcondition_Click"/>
+        <Button x:Name="b_loop" Content="Pętla" Grid.Column="1" HorizontalAlignment="Left" Margin="192,69,0,0" Grid.Row="1" VerticalAlignment="Top" Click="b_loop_Click"/>
+        <TextBox x:Name="komunikat" HorizontalAlignment="Left" Margin="131,38,0,0" Grid.Row="2" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+    </Grid>
+</Window>

@@ -1,0 +1,16 @@
+﻿<Window x:Class="Zmiana_Zakotwiczenia.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Zmiana_Zakotwiczenia"
+        mc:Ignorable="d"
+        Background="Gray"
+        Title="MainWindow" Height="150" Width="800">
+    <Grid>
+        <Button x:Name="kotwica" Content="Kliknij aby zmienic zakotwiczenie" HorizontalAlignment="Left" Margin="172,36,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <CheckBox x:Name="enable" Content="Włącz możliwość zmiany" HorizontalAlignment="Left" Margin="574,43,0,0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="objekt" HorizontalAlignment="Center" Margin="0,90,0,0" Text="Center" TextWrapping="Wrap" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
