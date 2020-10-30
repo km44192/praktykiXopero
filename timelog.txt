@@ -5,4 +5,4 @@ Start 26-10-2020 8:00 Koniec 26-10-2020 16:00 koniec części teoretycznej
 Start 27-10-2020 10:00 Koniec 27-10-2020 18:00 aplikacja alien cz1
 Start 28-10-2020 9:00 Koniec 28-10-2020 17:00 stworzenie prostej apki z warunkami i z zakotwiczaniem
 Start 29-10-2020 9:00 Koniec 29-10-2020 17:00 
-Start 30-10-2020 10:00
+Start 30-10-2020 10:00 Koniec 30-10-2020 18:00 Zakończenie rozdziału 3
