@@ -14,11 +14,13 @@ namespace zakład_buchmakerski
         public Label moja_etykieta;
 
 
-        public void UpdateLabels() {   moj_przycisk.Text = imie + " ma na koncie" + konto + " zł"; }
+        public void UpdateLabels() {   moj_przycisk.Text = imie + " ma na koncie " + konto + " zł"; }
         public void ClearBet() { bet.zakład = 0; bet.Rybka = ""; }
-        public void Collect() { konto = konto + bet.PayOut(bet.Rybka); }
-        public bool PlaceBet(int ammount,string whotowin) { if (ammount != 0 && whotowin != "") { ammount = bet.zakład; whotowin = bet.Rybka;return true; }   else return false; }
+        public void Collect(string ryba) { konto = konto + bet.PayOut(ryba); }
+        public bool PlaceBet(int ammount,string whotowin) { if (ammount != 0 && whotowin != "") {  bet.zakład=ammount;  bet.Rybka=whotowin;return true; }   else return false; }
 
-        public Osoba(string Imie, int kwota, Label label, RadioButton radio) { imie = Imie; konto = kwota; moja_etykieta = label; moj_przycisk = radio; }
+        public Osoba(string Imie, int kwota) { imie = Imie; konto = kwota; bet = new Betting() { zakład = 0, Rybka = "", kto =this}; }
+
+        
     }
 }

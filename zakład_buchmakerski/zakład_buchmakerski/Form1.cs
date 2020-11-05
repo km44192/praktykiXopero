@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace zakład_buchmakerski
 {
@@ -16,19 +17,32 @@ namespace zakład_buchmakerski
         Osoba Dominik = new Osoba("Dominik", 100);
         Osoba Pawel = new Osoba("Paweł", 200);
         Osoba Dariusz = new Osoba("Darek", 150);
+        Osoba tymcz;
+        Betting obstawa;
         public Form1()
         {
-            InitializeComponent(); 
-            
+            InitializeComponent();
 
-          infoGuy1.Text= Dominik.UpdateLabels();
+            Dominik.moj_przycisk = setGuyBet1;
+            Pawel.moj_przycisk = setGuyBet2;
+            Dariusz.moj_przycisk = setGuyBet3;
+
+            Dominik.moja_etykieta = infoGuy1;
+            Pawel.moja_etykieta = infoGuy2;
+            Dariusz.moja_etykieta = infoGuy3;
+
+            Dominik.UpdateLabels();
             Pawel.UpdateLabels();
             Dariusz.UpdateLabels();
-            
+
+            Dominik.moja_etykieta.Text = Dominik.bet.GetDescription();
+            Pawel.moja_etykieta.Text = Pawel.bet.GetDescription();
+            Dariusz.moja_etykieta.Text = Dariusz.bet.GetDescription();
+
         }
         Wlepy[] biegacz = new Wlepy[4];
-       
-        
+
+            
         private void move1(int index,PictureBox info)
         {
             if (biegacz[index] == null) { biegacz[index] = new Wlepy();
@@ -51,6 +65,14 @@ namespace zakład_buchmakerski
                     if (!(biegacz[i].goingForward))
                     {
                         winner = biegacz[i].obrazek.Name;
+                        Dominik.Collect(Dominik.bet.Rybka);
+                        Pawel.Collect(Pawel.bet.Rybka);
+                        Dariusz.Collect(Dariusz.bet.Rybka);
+
+                        Dominik.UpdateLabels();
+                        Pawel.UpdateLabels();
+                        Dariusz.UpdateLabels();
+                        
                         timer1.Enabled = false;
                         biegacz[0].Reset();
                         biegacz[1].Reset();
@@ -88,22 +110,41 @@ namespace zakład_buchmakerski
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             bettingGuyName.Text = Dominik.imie;
+            tymcz = Dominik;
+            Dominik.bet = obstawa;
         }
 
         private void setGuyBet2_CheckedChanged(object sender, EventArgs e)
         {
+            bettingGuyName.Text = Pawel.imie;
+            tymcz = Pawel;
+            Pawel.bet = obstawa;
 
         }
 
         private void setGuyBet3_CheckedChanged(object sender, EventArgs e)
         {
-
+            bettingGuyName.Text = Dariusz.imie;
+            tymcz = Dariusz;
+            Dariusz.bet = obstawa;
         }
 
         private void bet_Click(object sender, EventArgs e)
-        {
-            Betting bet = new Betting();
+        {   
+            Osoba tmp1 = tymcz;
+           obstawa = new Betting() { zakład = (int)ammountof.Value, Rybka = who1.Text,kto =tymcz};
+            tmp1.bet = obstawa;
+            MessageBox.Show(Pawel.bet.Rybka);
+            MessageBox.Show(Dominik.bet.Rybka);
+            MessageBox.Show(Dariusz.bet.Rybka);
+            tmp1.PlaceBet(obstawa.zakład, obstawa.Rybka);
+            tmp1.moja_etykieta.Text=obstawa.GetDescription();
+            tymcz = tmp1;
+        
 
+            
         }
+
+      
     }
 }

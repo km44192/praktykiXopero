@@ -41,7 +41,7 @@
             this.setGuyBet3 = new System.Windows.Forms.RadioButton();
             this.minbet = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.who = new System.Windows.Forms.NumericUpDown();
+            this.who1 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.ammountof = new System.Windows.Forms.NumericUpDown();
             this.bet = new System.Windows.Forms.Button();
@@ -57,12 +57,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.ryba3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ryba4)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.who)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ammountof)).BeginInit();
             this.SuspendLayout();
             // 
             // timer1
             // 
+            this.timer1.Interval = 50;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // button4
@@ -74,6 +74,7 @@
             this.button4.TabIndex = 6;
             this.button4.Text = "Start";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // pictureBox1
             // 
@@ -190,7 +191,7 @@
             // 
             this.panel1.AccessibleName = "";
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.who);
+            this.panel1.Controls.Add(this.who1);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.ammountof);
             this.panel1.Controls.Add(this.bet);
@@ -210,12 +211,12 @@
             this.panel1.Size = new System.Drawing.Size(629, 187);
             this.panel1.TabIndex = 14;
             // 
-            // who
+            // who1
             // 
-            this.who.Location = new System.Drawing.Point(384, 152);
-            this.who.Name = "who";
-            this.who.Size = new System.Drawing.Size(54, 23);
-            this.who.TabIndex = 22;
+            this.who1.Location = new System.Drawing.Point(338, 149);
+            this.who1.Name = "who1";
+            this.who1.Size = new System.Drawing.Size(100, 23);
+            this.who1.TabIndex = 22;
             // 
             // label8
             // 
@@ -223,9 +224,9 @@
             this.label8.ForeColor = System.Drawing.SystemColors.Desktop;
             this.label8.Location = new System.Drawing.Point(283, 154);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(80, 15);
+            this.label8.Size = new System.Drawing.Size(31, 15);
             this.label8.TabIndex = 21;
-            this.label8.Text = "zł na rybkę nr ";
+            this.label8.Text = "zł na";
             // 
             // ammountof
             // 
@@ -329,7 +330,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ryba4)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.who)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ammountof)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -355,10 +355,10 @@
         private System.Windows.Forms.Label infoGuy1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label bettingGuyName;
-        private System.Windows.Forms.NumericUpDown who;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.NumericUpDown ammountof;
         private System.Windows.Forms.Button bet;
+        private System.Windows.Forms.TextBox who1;
     }
 }
 
