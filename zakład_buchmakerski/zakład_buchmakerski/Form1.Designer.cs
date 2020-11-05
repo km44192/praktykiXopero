@@ -180,12 +180,13 @@
             // minbet
             // 
             this.minbet.AutoSize = true;
+            this.minbet.Font = new System.Drawing.Font("Segoe UI", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
             this.minbet.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.minbet.Location = new System.Drawing.Point(18, 16);
+            this.minbet.Location = new System.Drawing.Point(18, 13);
             this.minbet.Name = "minbet";
-            this.minbet.Size = new System.Drawing.Size(68, 15);
+            this.minbet.Size = new System.Drawing.Size(128, 19);
             this.minbet.TabIndex = 13;
-            this.minbet.Text = "minimalbet";
+            this.minbet.Text = "Minimalny bet 5zł";
             // 
             // panel1
             // 
@@ -279,10 +280,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label4.Location = new System.Drawing.Point(238, 16);
+            this.label4.Location = new System.Drawing.Point(238, 12);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 15);
+            this.label4.Size = new System.Drawing.Size(64, 20);
             this.label4.TabIndex = 15;
             this.label4.Text = "Zakłady";
             // 

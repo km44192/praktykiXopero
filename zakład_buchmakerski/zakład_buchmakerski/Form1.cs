@@ -65,9 +65,9 @@ namespace zakład_buchmakerski
                     if (!(biegacz[i].goingForward))
                     {
                         winner = biegacz[i].obrazek.Name;
-                        Dominik.Collect(Dominik.bet.Rybka);
-                        Pawel.Collect(Pawel.bet.Rybka);
-                        Dariusz.Collect(Dariusz.bet.Rybka);
+                        Dominik.Collect(winner);
+                        Pawel.Collect(winner);
+                        Dariusz.Collect(winner);
 
                         Dominik.UpdateLabels();
                         Pawel.UpdateLabels();
