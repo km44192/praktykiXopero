@@ -30,7 +30,7 @@ namespace Planowanie_przyjęcia
             return costOfdrinks;
             
         }
-        private decimal KosztOzdob() {
+        public decimal KosztOzdob() {
             decimal costOfDecoration,decocost;
             if (deco) 
             {
