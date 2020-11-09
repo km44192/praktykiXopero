@@ -12,15 +12,17 @@ namespace Planowanie_przyjęcia
 {
     public partial class Form1 : Form
     {
-        DinnerParty Impreza=new DinnerParty();
+        DinnerParty Impreza;
         BirthdayParty Uro;
         public Form1()
         {
             InitializeComponent();
 
             BirthdayParty Urodziny = new BirthdayParty((int)NumOfPeople.Value, deco1.Checked, NapisTort.Text);
-            wynik2.Text = Urodziny.KosztimprezyUrodzinowe().ToString("c");
+            DinnerParty Party = new DinnerParty((int)NumOfPeople.Value, fit.Checked, deco.Checked);
+            wynik2.Text = Urodziny.Cost.ToString("c");
             Uro = Urodziny;
+            Impreza = Party;
         }
         
         
@@ -28,29 +30,29 @@ namespace Planowanie_przyjęcia
         {
 
             Impreza.fit = fit.Checked;
-            kwota.Text = Impreza.KosztImprezy(fit.Checked).ToString("c");
+            kwota.Text = Impreza.Cost.ToString("c");
         }
 
         private void deco_CheckedChanged(object sender, EventArgs e)
         {
             Impreza.deco = deco.Checked;
-            kwota.Text = Impreza.KosztImprezy(fit.Checked).ToString("c");
+            kwota.Text = Impreza.Cost.ToString("c");
 
         }
 
         private void kwota_Click(object sender, EventArgs e)
         {
-            Impreza.Partyamm((int)IleGosci.Value);
+            Impreza.IloscGosci=((int)IleGosci.Value);
          
-            kwota.Text = Impreza.KosztImprezy(fit.Checked).ToString("c");
+            kwota.Text = Impreza.Cost.ToString("c");
         }
 
         private void NumOfPeople_ValueChanged(object sender, EventArgs e)
         {
             alert.Text=Uro.WriteAlert();
-            Uro.Partyamm((int)NumOfPeople.Value);
+            
             Uro.IloscGosci = (int)NumOfPeople.Value;
-            wynik2.Text = Uro.KosztimprezyUrodzinowe().ToString("C");
+            wynik2.Text = Uro.Cost.ToString("C");
         }
 
         private void deco1_CheckedChanged(object sender, EventArgs e)
@@ -59,7 +61,7 @@ namespace Planowanie_przyjęcia
             Uro.deco = deco1.Checked;
           
 
-            wynik2.Text = Uro.KosztimprezyUrodzinowe().ToString("C");
+            wynik2.Text = Uro.Cost.ToString("C");
         }
 
         private void NapisTort_TextChanged(object sender, EventArgs e)
@@ -67,7 +69,7 @@ namespace Planowanie_przyjęcia
             Uro.WriteAlert();
            
             Uro.CakeWriting = NapisTort.Text;
-            wynik2.Text = Uro.KosztimprezyUrodzinowe().ToString("C");
+            wynik2.Text = Uro.Cost.ToString("C");
         }
     }
 }

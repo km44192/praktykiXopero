@@ -4,7 +4,7 @@ namespace Jubiler_i_zlodziej
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             Jubiler content = new Jubiler();
             Wlasciciel wlasciciel = new Wlasciciel();

@@ -5,20 +5,15 @@ using System.Windows.Forms;
 
 namespace Planowanie_przyjęcia
 {
-    class DinnerParty
+    class DinnerParty:Party
     {
-        private const int stalaoplata = 25;
-        private int numOfGuests;
+     
+ 
         public bool fit { get; set; }
-        public bool deco { get; set; }
+    
      
 
-        private int GetNumOfGuests()
-        {
-            return numOfGuests;
-        }
-
-        public void Partyamm(int goscie){ numOfGuests = goscie; GetNumOfGuests();   }
+   public DinnerParty(int numofpeople,bool healthyOption,bool deco) { IloscGosci = numofpeople;  fit = healthyOption; this.deco = deco; }
 
         private decimal ZdroweJedzenie()
         {
@@ -30,34 +25,21 @@ namespace Planowanie_przyjęcia
             return costOfdrinks;
             
         }
-        public decimal KosztOzdob() {
-            decimal costOfDecoration,decocost;
-            if (deco) 
-            {
-                costOfDecoration = 50.00M; decocost = 15.00M; 
-            }
-            else 
-            {
-                costOfDecoration = 30.00M;
-                 decocost = 7.5M; 
-            }
-            decocost = decocost * numOfGuests;
-            costOfDecoration = decocost + costOfDecoration;
-            return costOfDecoration;
-            
-        }
-        public decimal KosztImprezy(bool fit)
+  
+        override public decimal Cost
         {
-           decimal totalcost = 0;
-            if (fit)
-            {
-                totalcost = (((ZdroweJedzenie() + stalaoplata) * numOfGuests) + KosztOzdob()) * 0.95M;
-                return totalcost;
-            }
-            else
+            get {
+                decimal totalCost;
+                if (fit)
                 {
-                totalcost = ((ZdroweJedzenie()+stalaoplata) * numOfGuests) + KosztOzdob();
-                return totalcost;
+                    totalCost = ((ZdroweJedzenie() + 25) * IloscGosci) * 0.95M;
+                    return totalCost;
+                }
+                else
+                {
+                    totalCost = ((ZdroweJedzenie() + 25) * IloscGosci);
+                    return totalCost;
+                }
             }
         }
        
