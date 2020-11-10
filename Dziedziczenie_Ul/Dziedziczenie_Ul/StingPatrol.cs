@@ -63,5 +63,6 @@ namespace Dziedziczenie_Ul
             return consumption;
         }
         public StingPatrol(string[] work, int masa) : base(work, masa) { }
+        
     }
 }

@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Forms;
 
 namespace Dziedziczenie_Ul
 {
     class Krolowa:Bee
     {
         public Krolowa(Robotnica[] x,double masa) : base(masa) { robotnice = x; }
-
-        private Robotnica[] robotnice;
+        private void DefendTheHive(IStingPatrol patroller) { }
+        private void AlternateDefendTheHive(INectarCollector patroller) { }
+            private Robotnica[] robotnice;
         private int NumerZmiany=0;
 
         
@@ -45,5 +47,8 @@ namespace Dziedziczenie_Ul
              report+="Całkowite spożycie miodu "+honeyConsumed+" jednostek \r\n";
             return report;
         }
+
+        
+        
     }
 }

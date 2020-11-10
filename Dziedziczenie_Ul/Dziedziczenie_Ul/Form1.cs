@@ -18,12 +18,28 @@ namespace Dziedziczenie_Ul
         public Form1()
         {
             InitializeComponent();
-            prace.Items.Add(  "Zbieranie Nektaru");
+            prace.Items.Add("Zbieranie Nektaru");
             prace.Items.Add("Wytwarzanie miodu");
             prace.Items.Add("Pielegnacja jaj");
             prace.Items.Add("Nauczanie pszczółek");
             prace.Items.Add("Utrzymanie ula");
-            prace.Items.Add("Patrol z żądłami"); 
+            prace.Items.Add("Patrol z żądłami");
+            //rozdział 7 interfejsy
+            IWorker[] Pszczoly = new IWorker[3];
+            Pszczoly[0] = new NectarStinger(new string[] { "Zbieranie Nektaru", "Wytwarzanie miodu", "Patrol z żądłami" }, 175);
+            Pszczoly[1] = new RoboBee();
+            Pszczoly[2] = new Robotnica(new string[] { "Zbieranie Nektaru", "Wytwarzanie miodu", "Pielegnacja jaj", "Nauczanie pszczółek", "Utrzymanie Ula", "Patrol z żądłami" }, 100) as IWorker;
+
+
+            for(int i = 0; i < Pszczoly.Length; i++) { 
+                if(Pszczoly[i] is INectarCollector) 
+                { 
+                    INectarCollector thisCollector;
+                    thisCollector = Pszczoly[i] as INectarCollector;
+                    thisCollector.GatherNectar();
+                }
+            }
+            //---------------
             StingPatrol guard = new StingPatrol(new string[] { "Patrol z żądłami" } , 200);
             Robotnica[] robotnice = new Robotnica[5];
             PrzypiszPrace.TabIndex = 0;

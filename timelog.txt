@@ -11,4 +11,4 @@ Start 03-11-2020 10:00 Koniec 03-11-2020 18:00 Tworzenie zadania z wyścigami ps
 Start 05-11-2020 10:00 Koniec 05-11-2020 18:00 Koniec Rozdziału 5
 Start 06-11-2020 10:00 Koniec 06-11-2020 18:00 Zadania Rozdział 6
 Start 09-11-2020 11:00 Koniec 09-11-2020 19:00 koniec Rozdziału 6 początek 7
-Start 10-11-2020 10:00
+Start 10-11-2020 10:00 Koniec 10-11-2020 18:00 Zdania z rozdziału 7
