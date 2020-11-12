@@ -13,7 +13,7 @@ namespace Moj_Nowy_Dom
 
         
 
-        public Room(string deco,string name):base(name) { decoration = deco; }
-        public override string Description { get { return base.Description+"Widzisz tutaj "+decoration+"."} }
+        public Room(string name,string deco):base(name) { decoration = deco; }
+        public override string Description { get { return base.Description + "\n Widzisz tutaj " + decoration + "."; } }
     }
 }

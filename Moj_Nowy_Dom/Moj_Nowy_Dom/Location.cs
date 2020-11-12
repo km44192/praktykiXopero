@@ -18,8 +18,8 @@ abstract class Location
         {
 
             get
-            {
-                string description = "Stoisz w" + Name + ". Widzisz wyjście na następujące lokacje: ";
+            { 
+                string description = " Stoisz w " + Name + ".\n Widzisz wyjście na następujące lokacje: \n";
                 for (int i = 0; i < Exits.Length; i++)
                 {
                     description += " " + Exits[i].Name;

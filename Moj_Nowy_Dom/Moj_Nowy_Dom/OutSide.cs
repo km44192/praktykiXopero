@@ -13,7 +13,7 @@ namespace Moj_Nowy_Dom
         public OutSide(bool hot,string nazwa):base(nazwa) { this.hot = hot; }
         public override string Description { get { string NewDesription = base.Description;
                 if (hot)
-                    NewDesription += " Tutaj jest bardzo gorąco";
+                    NewDesription += " \nTutaj jest bardzo gorąco";
                 return NewDesription;
             } }
     }

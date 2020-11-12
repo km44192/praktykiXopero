@@ -4,11 +4,11 @@ using System.Text;
 
 namespace Moj_Nowy_Dom
 {
-    class RoomWithDoor:Room,IHasExteriorDoor
+    class RoomWithDoor:RoomWithHidingPlace,IHasExteriorDoor
     {
         public string doorDescription { get; private set; }
         public Location DoorLocation { get; set; }
 
-        public RoomWithDoor(string pokoj,string decoration,string doordescritino) : base(decoration,pokoj) { doorDescription = doordescritino; }
+        public RoomWithDoor(string pokoj,string decoration,string hidingPlaceName,string doordescritino) : base(pokoj,decoration,hidingPlaceName) { doorDescription = doordescritino; }
     }
 }
