@@ -34,14 +34,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.LamberInfo = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.nextLumber = new System.Windows.Forms.Button();
             this.Add = new System.Windows.Forms.Button();
             this.Op4 = new System.Windows.Forms.RadioButton();
             this.Op3 = new System.Windows.Forms.RadioButton();
             this.Op2 = new System.Windows.Forms.RadioButton();
             this.Op1 = new System.Windows.Forms.RadioButton();
             this.Ile = new System.Windows.Forms.NumericUpDown();
-            this.text = new System.Windows.Forms.RichTextBox();
+            this.text = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Ile)).BeginInit();
             this.SuspendLayout();
@@ -84,7 +84,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.LamberInfo);
-            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Controls.Add(this.nextLumber);
             this.groupBox1.Controls.Add(this.Add);
             this.groupBox1.Controls.Add(this.Op4);
             this.groupBox1.Controls.Add(this.Op3);
@@ -107,15 +107,15 @@
             this.LamberInfo.Size = new System.Drawing.Size(167, 63);
             this.LamberInfo.TabIndex = 7;
             // 
-            // button3
+            // nextLumber
             // 
-            this.button3.Location = new System.Drawing.Point(7, 309);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(167, 25);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Następny drwall";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.nextLumber.Location = new System.Drawing.Point(7, 309);
+            this.nextLumber.Name = "nextLumber";
+            this.nextLumber.Size = new System.Drawing.Size(167, 25);
+            this.nextLumber.TabIndex = 6;
+            this.nextLumber.Text = "Następny drwall";
+            this.nextLumber.UseVisualStyleBackColor = true;
+            this.nextLumber.Click += new System.EventHandler(this.button3_Click);
             // 
             // Add
             // 
@@ -180,12 +180,12 @@
             // 
             // text
             // 
-            this.text.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.text.FormattingEnabled = true;
+            this.text.ItemHeight = 15;
             this.text.Location = new System.Drawing.Point(13, 129);
             this.text.Name = "text";
-            this.text.Size = new System.Drawing.Size(162, 330);
+            this.text.Size = new System.Drawing.Size(162, 334);
             this.text.TabIndex = 5;
-            this.text.Text = "";
             // 
             // Form1
             // 
@@ -216,14 +216,15 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox LamberInfo;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button nextLumber;
         private System.Windows.Forms.Button Add;
         private System.Windows.Forms.RadioButton Op4;
         private System.Windows.Forms.RadioButton Op3;
         private System.Windows.Forms.RadioButton Op2;
         private System.Windows.Forms.RadioButton Op1;
         private System.Windows.Forms.NumericUpDown Ile;
-        private System.Windows.Forms.RichTextBox text;
+        private System.Windows.Forms.TextBox text12;
+        private System.Windows.Forms.ListBox text;
     }
 }
 

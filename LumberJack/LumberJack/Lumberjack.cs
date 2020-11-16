@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Forms;
 
 namespace LumberJack
 {
@@ -27,15 +28,18 @@ namespace LumberJack
         public int FlapjackCount { get { return meal.Count; } }
         public void TakeFlapjacks(Flapjack food,int howMany)
         {
-            for (int i = 1; i < howMany; i++)
+            for (int i = 1; i <= howMany; i++)
                 meal.Push(food);
 
         }
         public void EatFlapjacks()
         {
             while (meal.Count != 0)
-                Console.WriteLine(Name + "zjadł " + meal.Peek() + " naleśnika");
-            meal.Pop();
+            {
+                
+              MessageBox.Show(Name + "zjadł " + meal.Peek() + " naleśnika");
+                meal.Pop();
+            }
         }
     }
 }
