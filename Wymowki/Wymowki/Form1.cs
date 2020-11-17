@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Wymowki
 {
@@ -23,6 +24,11 @@ namespace Wymowki
 
         private void button4_Click(object sender, EventArgs e)
         {
+            if (CheckChanged())
+            {
+                currentExcuse = new Excuse(random, selectedFolder);
+                UpdateForm(false);
+            }
 
         }
 
@@ -41,7 +47,7 @@ namespace Wymowki
 
         private void saveFi_Click(object sender, EventArgs e)
         {
-            if(!String.IsNullOrEmpty(textBox1.Text)| String.IsNullOrEmpty(textBox2.Text)){
+            if(String.IsNullOrEmpty(textBox1.Text)|| !String.IsNullOrEmpty(textBox2.Text)){
                 MessageBox.Show("Określ wymówkę i rezultat", "Nie można zapisać pliku", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
@@ -74,8 +80,48 @@ namespace Wymowki
 
         private bool CheckChanged()
         {
-            if(form)
+            if (formChanged)
+            {
+                DialogResult result = MessageBox.Show("Bieżąca wymówka nie została zapisana. Czy kontynuować?", "Ostrzeżenie", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.No)
+                    return false;
 
+            }
+            return true;
+        }
+        private void UpdateForm(bool changed)
+        {
+            if (!changed)
+            {
+                textBox1.Text = currentExcuse.Description;
+                textBox2.Text = currentExcuse.Results;
+                lastUsed.Value = currentExcuse.LastUsed;
+                if (!String.IsNullOrEmpty(currentExcuse.ExcusePath))
+                    textBox3.Text = File.GetLastWriteTime(currentExcuse.ExcusePath).ToString();
+                this.Text = "Program do zarządzania wymówkami*";
+
+            }
+            else
+                this.Text = "Program do zarządzania wymówkami*";
+            this.formChanged = changed;
+        }
+
+        private void description_textChanged(object sender, EventArgs e)
+        {
+            currentExcuse.Description = textBox1.Text;
+            UpdateForm(true);
+        }
+
+        private void Result_textChanged(object sender, EventArgs e)
+        {
+            currentExcuse.Results = textBox2.Text;
+            UpdateForm(true);
+        }
+
+        private void lastUsed_ValueChanged(object sender, EventArgs e)
+        {
+            currentExcuse.LastUsed = lastUsed.Value;
+            UpdateForm(true);
         }
     }
 }

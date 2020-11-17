@@ -21,16 +21,25 @@ namespace Gra_Karciana
         }
         private void ResetDeck(int deckNumber)
         {
-            if (deckNumber == 1)
+            openFileDialog1.InitialDirectory = @"C\Users";
+            openFileDialog1.Filter = "Pliki tekstowe (*.txt)|*.txt| Wszystkie pliki (*.*)|*.*";
+            openFileDialog1.FileName = "";
+            DialogResult result = openFileDialog1.ShowDialog();
+            if (result == DialogResult.OK)
             {
-                int numberOfCards = random.Next(1, 11);
-                talia1 = new Deck(new Card[] { });
-                for (int i = 0; i < numberOfCards; i++)
-                    talia1.Add(new Card((Suits)random.Next(4), (Values)random.Next(1, 14)));
-                    
-                talia1.Sort();
+
+
+                if (deckNumber == 1)
+                {
+                    int numberOfCards = random.Next(1, 11);
+                    talia1 = new Deck(openFileDialog1.FileName);
+                    for (int i = 0; i < numberOfCards; i++)
+                        talia1.Add(new Card((Suits)random.Next(4), (Values)random.Next(1, 14)));
+
+                    talia1.Sort();
+                }
+                else talia2 = new Deck();
             }
-            else talia2 = new Deck();
         }
 
         private void Reset1_Click(object sender, EventArgs e)
@@ -77,6 +86,8 @@ namespace Gra_Karciana
             RedrawDeck(1);
             RedrawDeck(2);
         }
+
+     
 
         public void RedrawDeck(int Decknumber)
         {

@@ -5,6 +5,7 @@ using System.Windows.Forms;
 
 namespace Banking
 {
+    [Serializable]
     class Guy
     {
        private string Name;

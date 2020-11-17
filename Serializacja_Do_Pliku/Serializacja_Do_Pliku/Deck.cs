@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
-
-namespace Talia_Kart
-{
+using System.Runtime.Serialization.Formatters.Binary;
+namespace Serializacja_Do_Pliku
+{[Serializable]
     class Deck
     {
        private List<Card> talia;
-        private Random random = new Random();
+        public Random random = new Random();
 
         public Deck()
         {
@@ -17,7 +17,7 @@ namespace Talia_Kart
                 for (int value = 1; value <= 13; value++)
                     talia.Add(new Card((Suits)suit, (Values)value));
         }
-        public Deck(string FileName)
+        /*public Deck(string FileName)
         {
             talia = new List<Card>();
             StreamReader reader = new StreamReader(FileName);
@@ -59,7 +59,7 @@ namespace Talia_Kart
                 }
             }
 
-        }
+        }*/
         public Deck(IEnumerable<Card> initialCards)
         {
             talia = new List<Card>(initialCards);

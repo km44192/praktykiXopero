@@ -37,6 +37,9 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
+            this.savePawel = new System.Windows.Forms.Button();
+            this.saveRoman = new System.Windows.Forms.Button();
+            this.compareF = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // opisPawel
@@ -121,11 +124,44 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // savePawel
+            // 
+            this.savePawel.Location = new System.Drawing.Point(214, 271);
+            this.savePawel.Name = "savePawel";
+            this.savePawel.Size = new System.Drawing.Size(118, 23);
+            this.savePawel.TabIndex = 9;
+            this.savePawel.Text = "Zapisz stan pawła";
+            this.savePawel.UseVisualStyleBackColor = true;
+            this.savePawel.Click += new System.EventHandler(this.savePawel_Click);
+            // 
+            // saveRoman
+            // 
+            this.saveRoman.Location = new System.Drawing.Point(473, 271);
+            this.saveRoman.Name = "saveRoman";
+            this.saveRoman.Size = new System.Drawing.Size(133, 23);
+            this.saveRoman.TabIndex = 10;
+            this.saveRoman.Text = "Zapisz stan Romana";
+            this.saveRoman.UseVisualStyleBackColor = true;
+            this.saveRoman.Click += new System.EventHandler(this.saveRoman_Click);
+            // 
+            // compareF
+            // 
+            this.compareF.Location = new System.Drawing.Point(41, 180);
+            this.compareF.Name = "compareF";
+            this.compareF.Size = new System.Drawing.Size(75, 23);
+            this.compareF.TabIndex = 11;
+            this.compareF.Text = "porównaj pliki";
+            this.compareF.UseVisualStyleBackColor = true;
+            this.compareF.Click += new System.EventHandler(this.compareF_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(790, 306);
+            this.Controls.Add(this.compareF);
+            this.Controls.Add(this.saveRoman);
+            this.Controls.Add(this.savePawel);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
@@ -153,6 +189,9 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button savePawel;
+        private System.Windows.Forms.Button saveRoman;
+        private System.Windows.Forms.Button compareF;
     }
 }
 

@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Banking
 {
@@ -49,6 +51,40 @@ namespace Banking
             else if(opRoman.Checked) Roman.takeout(int.Parse(textBox1.Text));
             opisPawel.Text = Pawel.NameInfo() + " posiada " + Pawel.AccountInf() + " zł \n";
             opisRoman.Text = Roman.NameInfo() + " posiada " + Roman.AccountInf() + " zł \n";
+        }
+
+        private void saveRoman_Click(object sender, EventArgs e)
+        {
+            using(Stream output = File.Create("DaneR.dat"))
+            {
+                BinaryFormatter formatter = new BinaryFormatter();
+                formatter.Serialize(output, Roman);
+            }
+
+        }
+
+        private void savePawel_Click(object sender, EventArgs e)
+        {
+            using (Stream output = File.Create("DaneP.dat"))
+            {
+                BinaryFormatter formatter = new BinaryFormatter();
+                formatter.Serialize(output, Pawel);
+            }
+        }
+        //Porównianie plików binarnych
+        private void compareF_Click(object sender, EventArgs e)
+        {
+            string mess = "";
+            byte[] input1 = File.ReadAllBytes("DaneR.dat");
+            byte[] input2 = File.ReadAllBytes("DaneP.dat");
+            for(int i = 0; i < input1.Length; i++)
+            {
+                if (input1[i] != input2[i])
+                {
+                    mess = mess + "\n Bajt numer " + i + " : " + input1[i] + " i " + input2[i];
+                }
+            }
+            MessageBox.Show(mess);
         }
     }
 }

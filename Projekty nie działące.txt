@@ -1,0 +1,1 @@
+"Serializacja_do_pliku" kompiluje się, ale nie można serializować funckji random i wyrzuca wyjątek
