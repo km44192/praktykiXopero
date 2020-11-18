@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Wymowki
 {
@@ -40,7 +41,12 @@ namespace Wymowki
             DialogResult result = openFileDialog1.ShowDialog();
                 if (result == DialogResult.OK)
             {
-                currentExcuse = new Excuse(openFileDialog1.FileName);
+               using(Stream input = File.OpenRead(openFileDialog1.FileName))
+                {
+                    BinaryFormatter bf = new BinaryFormatter();
+                    currentExcuse = (Excuse)bf.Deserialize(input);
+                }
+                
                 UpdateForm(false);
             }
         }
@@ -57,6 +63,11 @@ namespace Wymowki
             DialogResult result = saveFileDialog1.ShowDialog();
             if (result == DialogResult.OK) ;
             {
+                using (Stream output = File.OpenWrite(saveFileDialog1.FileName))
+                {
+                    BinaryFormatter bf = new BinaryFormatter();
+                    bf.Serialize(output, currentExcuse);
+                }
                 UpdateForm(false);
                 MessageBox.Show("Wymówka zapisana");
             }
