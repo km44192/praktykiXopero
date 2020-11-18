@@ -16,3 +16,4 @@ Start 12-11-2020 10:00 Koniec 12-11-2020 18:00 Zdania z Rozdziału 8
 Start 13-11-2020 11:00 Koniec 13-11-2020 19:00 Zadania rozdział 8
 Start 16-11-2020 10:00 Koniec 16-11-2020 18:00 Koniec rozdziału 8 początek 9 (operacje na plikach)
 Start 17-11-2020 10:00 Koniec 17-11-2020 18:00 Koniec zadania z rozdziału 9
+Start 18-11-2020 10:00
