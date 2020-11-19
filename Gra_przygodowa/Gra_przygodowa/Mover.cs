@@ -8,9 +8,9 @@ namespace Gra_przygodowa
     public enum Direction
     {
         Up,
+        Left,
         Down,
         Right,
-        Left,
     }
     abstract class Mover
     {

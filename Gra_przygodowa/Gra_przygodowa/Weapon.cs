@@ -56,9 +56,48 @@ namespace Gra_przygodowa
 
     class Sword : Weapon 
     {
-    
-    
+        public  Sword(Game game,Point location) : base(game, location)
+        {
+
+        }
+        public override string Name { get{ return "Miecz"; } }
+        public override void Attack(Direction direction, Random random)
+        {
+            if (!DamageEnemy(direction, 10, 3, random))
+            {
+
+                if (!DamageEnemy(direction + 1, 10, 3, random))
+                {
+                    if (!DamageEnemy((direction - 1), 10, 3, random))
+                    { }
+                    else
+                        DamageEnemy((direction - 1), 10, 3, random);
+                }
+                else
+                    DamageEnemy(direction + 1, 10, 3, random);
+            }
+            else
+                DamageEnemy(direction, 10, 3, random);
+
+
+        }
+
     }
+    class Bow : Weapon
+    {
+        public Bow(Game game,Point location) : base(game, location) { }
+        public override string Name { get{ return "Łuk"; } }
+
+        public override void Attack(Direction direction, Random random)
+        {
+            if (DamageEnemy(direction, 30, 1, random))
+            {
+                DamageEnemy(direction, 30, 1, random);
+            }
+        }
+    }
+
+    
 
 
 

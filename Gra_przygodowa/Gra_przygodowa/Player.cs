@@ -10,7 +10,7 @@ namespace Gra_przygodowa
         public int HitPoints { get; private set; }
 
         private List<Weapon> inventory = new List<Weapon>();
-        public IEnumerable<string> Weapons
+        public ICollection<string> Weapons
         {
             get
             {
@@ -46,10 +46,14 @@ namespace Gra_przygodowa
         public void Move(Direction direction)
         {
             base.location = Move(direction, game.Bounderies);
-            if (!game.WeaponInRoom.PickedUp)
-            {
+            //if (!game.WeaponInRoom.PickedUp)
+          //  {
 
-            }
+           // }
+        }
+        public void Attack(Direction direction,Random random)
+        {
+            equippedWeapon.Attack(direction, random);
         }
     }
 }

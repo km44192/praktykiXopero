@@ -7,7 +7,7 @@ namespace Gra_przygodowa
 {
     class Game
     {
-        public IEnumerable<Enemy> Enemies { get; private set; }
+        public ICollection<Enemy> Enemies { get; private set; }
         public Weapon WeaponInRoom { get; private set; }
 
 
@@ -15,7 +15,7 @@ namespace Gra_przygodowa
         private Player player;
         public Point PlayerLocation { get { return player.Location; } }
         public int PlayerHitPoints { get { return player.HitPoints; } }
-        public IEnumerable<string> PlayerWeapons { get { return player.Weapons; } }
+        public ICollection<string> PlayerWeapons { get { return player.Weapons; } }
         private int level = 0;
         public int Level { get { return level; } }
         private Rectangle bounderies;
@@ -25,7 +25,7 @@ namespace Gra_przygodowa
         public Game(Rectangle bounderies)
         {
             this.bounderies = bounderies;
-            player = new Player(this, new Point(bounderies.Left + 10, bounderies.Top + 70);
+            player = new Player(this, new Point(bounderies.Left + 10, bounderies.Top + 70));
         }
         public void Move(Direction direction,Random random)
         {
@@ -62,7 +62,7 @@ namespace Gra_przygodowa
 
         private Point GetRandomLocation(Random random)
         {
-            return new Point(bounderies.Left+random.Next(bounderies.Right/10-bounderies.Left/10)*10, bounderies.Top + random.Next(bounderies.Bottom / 10 - bounderies.Top / 10) * 10);
+            return new Point(Bounderies.Left+random.Next(Bounderies.Right/10-Bounderies.Left/10)*10, Bounderies.Top + random.Next(Bounderies.Bottom / 10 - Bounderies.Top / 10) * 10);
         }
         public void NewLevel(Random random)
         {
@@ -71,8 +71,8 @@ namespace Gra_przygodowa
             {
                 case 1:
                     Enemies = new List<Enemy>();
-                    Enemies.Add(new Bat, GetRandomLocation(random));
-                    WeaponInRoom = new Sword(this, GetRandomLocation(random));
+               //     Enemies.Add(new Bat(new Game(Bounderies),GetRandomLocation(random)));
+                //   WeaponInRoom = new Sword(this, GetRandomLocation(random));
 
                     break;
             }
