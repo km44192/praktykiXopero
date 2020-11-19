@@ -6,6 +6,7 @@ namespace Moj_Nowy_Dom
 {
     class Opponent
     {
+
         private Random random;
         private Location myLocation;
         public Opponent(Location startingLocation)
@@ -15,7 +16,7 @@ namespace Moj_Nowy_Dom
         }
         public void Move()
         {
-            bool hidden = false;
+           bool hidden = false;
             while (!hidden)
             {
                 if (myLocation is IHasExteriorDoor)
@@ -23,13 +24,18 @@ namespace Moj_Nowy_Dom
                     IHasExteriorDoor locationWithDoor = myLocation as IHasExteriorDoor;
                     if (random.Next(2) == 1)
                         myLocation = locationWithDoor.DoorLocation;
+                    
                 }
                 int rand = random.Next(myLocation.Exits.Length);
                 myLocation = myLocation.Exits[rand];
                 if (myLocation is IHidingPlace)
                     hidden = true;
 
+                
+                
             }
+           
+
         }
         public bool Check(Location locationToCheck)
         {

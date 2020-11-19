@@ -31,10 +31,10 @@ namespace Gra_Karciana
 
                 if (deckNumber == 1)
                 {
-                    int numberOfCards = random.Next(1, 11);
+                //    int numberOfCards = random.Next(1, 11);
                     talia1 = new Deck(openFileDialog1.FileName);
-                    for (int i = 0; i < numberOfCards; i++)
-                        talia1.Add(new Card((Suits)random.Next(4), (Values)random.Next(1, 14)));
+                 //   for (int i = 0; i < numberOfCards; i++)
+               //         talia1.Add(new Card((Suits)random.Next(4), (Values)random.Next(1, 14)));
 
                     talia1.Sort();
                 }

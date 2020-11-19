@@ -43,8 +43,7 @@ namespace Gra_przygodowa
             GHealth.Content = "0";
             Nhealth.Content = "0";
             UHealth.Content = "0";
-            Canvas.SetLeft(Player, game.PlayerLocation.X);
-            Canvas.SetTop(Player, game.PlayerLocation.Y);
+            Player.TranslatePoint()
             
         }
         //Atak

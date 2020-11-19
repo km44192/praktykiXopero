@@ -10,27 +10,36 @@ namespace Banking
     {
        private string Name;
        private long account;
+       
 
        public Guy(string Imie,long stan) { Name = Imie;account = stan; }
 
 
-        public void giveMoney(int give) {
+        public bool giveMoney(int give) {
 
             if (AccountInf() < give)
             {
                 MessageBox.Show((NameInfo() + " Nie ma tylu pieniędzy na koncie\n"));
+                return false;
             }
             else
             {
-                MessageBox.Show((NameInfo() + " Dał " + give + " zł\n"));
+         
                 zmniejszstan(give);
+                return true;
             }
         
         }
         public void takeout(int n) { MessageBox.Show("Bank zabrał " + n + " zł" + NameInfo() + "owi\n"); zmniejszstan(n); }
         public void ReciveMoney(int rcv) {
-            MessageBox.Show((NameInfo()+" Dostał "+rcv+"\n"));
-            dodajstan(rcv);
+
+            
+            
+                MessageBox.Show((NameInfo() + " Dostał " + rcv + "\n"));
+
+                dodajstan(rcv);
+            
+           
         }
         public Guy() { }
         private void dodajstan(int x) { account = account + x; }

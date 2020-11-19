@@ -15,7 +15,7 @@
                         <ScaleTransform/>
                         <SkewTransform/>
                         <RotateTransform Angle="0"/>
-                        <TranslateTransform/>
+                        <TranslateTransform X="-1"/>
                     </TransformGroup>
                 </Image.RenderTransform>
             </Image>
@@ -34,7 +34,16 @@
                 <Image x:Name="icep" HorizontalAlignment="Left" Height="50" Margin="221,419,0,0" VerticalAlignment="Top" Width="50" Source="/mace.png"/>
                 <Image x:Name="duheal" HorizontalAlignment="Left" Height="50" Margin="331,424,0,0" VerticalAlignment="Top" Width="50" Source="/potion_red.png"/>
             </Grid>
-            <Image x:Name="Player" HorizontalAlignment="Left" Height="40" Margin="107,79,0,0" VerticalAlignment="Top" Width="40" Source="/player.png"/>
+            <Image x:Name="Player" HorizontalAlignment="Left" Height="40" Margin="107,79,0,0" VerticalAlignment="Top" Width="40" Source="/player.png" RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform X="0"/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
             <Image x:Name="Bat" HorizontalAlignment="Left" Height="40" Margin="159,80,0,0" VerticalAlignment="Top" Width="40" Source="/bat.png"/>
             <Image x:Name="ghost" HorizontalAlignment="Left" Height="40" Margin="209,80,0,0" VerticalAlignment="Top" Width="40" Source="/ghost.png"/>
             <Image x:Name="banshee" HorizontalAlignment="Left" Height="40" Margin="247,80,0,0" VerticalAlignment="Top" Width="40" Source="/ghoul.png"/>

@@ -14,9 +14,9 @@ namespace Banking
 {
     public partial class Form1 : Form
     {
-        
-            Guy Pawel = new Guy("Pawel", 100);
-            Guy Roman = new Guy("Roman", 300);
+
+        Guy Pawel = new Guy("Pawel", 100);
+        Guy Roman = new Guy("Roman", 300);
         public Form1()
         {
             InitializeComponent();
@@ -26,8 +26,12 @@ namespace Banking
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (OpPawel.Checked) { Pawel.ReciveMoney(int.Parse(textBox1.Text));}
-            else if (opRoman.Checked) { Roman.ReciveMoney(int.Parse(textBox1.Text)); }
+            if (OpPawel.Checked) { 
+                Pawel.ReciveMoney(int.Parse(textBox1.Text)); 
+            }
+            else if (opRoman.Checked) { 
+                Roman.ReciveMoney(int.Parse(textBox1.Text)); 
+            }
             opisPawel.Text = Pawel.NameInfo() + " posiada " + Pawel.AccountInf() + " zł \n";
             opisRoman.Text = Roman.NameInfo() + " posiada " + Roman.AccountInf() + " zł \n";
         }
@@ -35,9 +39,20 @@ namespace Banking
         private void button2_Click(object sender, EventArgs e)
         {
             if (OpPawel.Checked && opRoman.Checked) { MessageBox.Show("Zabroniona operacja"); }
-            else if (OpPawel.Checked) { Roman.giveMoney(int.Parse(textBox1.Text)); Pawel.ReciveMoney(int.Parse(textBox1.Text)); }
+            else if (OpPawel.Checked)
+            {
+
+              
+               if( Roman.giveMoney(int.Parse(textBox1.Text)))
+                Pawel.ReciveMoney(int.Parse(textBox1.Text));
+            }
             else if (opRoman.Checked)
-            { Pawel.giveMoney(int.Parse(textBox1.Text)); Roman.ReciveMoney(int.Parse(textBox1.Text)); }
+            {
+               
+                if(Pawel.giveMoney(int.Parse(textBox1.Text))) 
+                
+                Roman.ReciveMoney(int.Parse(textBox1.Text));
+            }
             else
                 MessageBox.Show("Brak operacji");
             opisPawel.Text = Pawel.NameInfo() + " posiada " + Pawel.AccountInf() + " zł \n";
@@ -46,16 +61,22 @@ namespace Banking
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if(OpPawel.Checked && opRoman.Checked) { Pawel.takeout(int.Parse(textBox1.Text)); Roman.takeout(int.Parse(textBox1.Text)); }
-            else if(OpPawel.Checked) Pawel.takeout(int.Parse(textBox1.Text));
-            else if(opRoman.Checked) Roman.takeout(int.Parse(textBox1.Text));
+            if (OpPawel.Checked && opRoman.Checked) 
+            { 
+                Pawel.takeout(int.Parse(textBox1.Text));
+                Roman.takeout(int.Parse(textBox1.Text));
+            }
+            else if (OpPawel.Checked)
+                Pawel.takeout(int.Parse(textBox1.Text));
+            else if (opRoman.Checked)
+                Roman.takeout(int.Parse(textBox1.Text));
             opisPawel.Text = Pawel.NameInfo() + " posiada " + Pawel.AccountInf() + " zł \n";
             opisRoman.Text = Roman.NameInfo() + " posiada " + Roman.AccountInf() + " zł \n";
         }
 
         private void saveRoman_Click(object sender, EventArgs e)
         {
-            using(Stream output = File.Create("DaneR.dat"))
+            using (Stream output = File.Create("DaneR.dat"))
             {
                 BinaryFormatter formatter = new BinaryFormatter();
                 formatter.Serialize(output, Roman);
@@ -77,7 +98,7 @@ namespace Banking
             string mess = "";
             byte[] input1 = File.ReadAllBytes("DaneR.dat");
             byte[] input2 = File.ReadAllBytes("DaneP.dat");
-            for(int i = 0; i < input1.Length; i++)
+            for (int i = 0; i < input1.Length; i++)
             {
                 if (input1[i] != input2[i])
                 {

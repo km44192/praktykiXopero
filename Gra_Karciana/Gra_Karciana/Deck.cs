@@ -26,37 +26,32 @@ namespace Talia_Kart
                 bool invalidCard = false;
                 string nextCard = reader.ReadLine();
                 string[] cardParts = nextCard.Split(new char[] { ' ' });
-                Values value = Values.Ace;
-                switch (cardParts[0])
+                Values value;
+                if (Enum.TryParse(cardParts[0], out value)) ;
+
+
+                else
                 {
-                    case "Ace": value = Values.Ace; break;
-                    case "Two": value = Values.Two; break;
-                    case "Three": value = Values.Three; break;
-                    case "Four": value = Values.Four; break;
-                    case "Five": value = Values.Five; break;
-                    case "Six": value = Values.Six; break;
-                    case "Seven": value = Values.Seven; break;
-                    case "Nine": value = Values.Nine; break;
-                    case "Ten": value = Values.Ten; break;
-                    case "Jack": value = Values.Jack; break;
-                    case "Queen": value = Values.Queen; break;
-                    case "King": value = Values.King; break;
-                    default: invalidCard = true; break;
+                    invalidCard = true;
+                    break;
                 }
                 Suits suit = Suits.Clubs;
-                switch (cardParts[1])
-                {
-                    case "Spades": suit = Suits.Spades; break;
-                    case "Clubs": suit = Suits.Clubs; break;
-                    case "Hearts": suit = Suits.Hearts; break;
-                    case "Diamonds": suit = Suits.Diamonds; break;
-                    default: invalidCard = true; break;
-    
-                }
-                if(!invalidCard)
-                {
-                    talia.Add(new Card(suit, value));
-                }
+             
+               
+                    switch (cardParts[1])
+                    {
+                        case "Spades": suit = Suits.Spades; break;
+                        case "Clubs": suit = Suits.Clubs; break;
+                        case "Hearts": suit = Suits.Hearts; break;
+                        case "Diamonds": suit = Suits.Diamonds; break;
+                        default: invalidCard = true; break;
+
+                    }
+                    if (!invalidCard)
+                    {
+                        talia.Add(new Card(suit, value));
+                    }
+                
             }
 
         }

@@ -12,7 +12,7 @@ namespace Dziedziczenie_Ul
 {
     public partial class Form1 : Form
     {
-        
+        public Random random = new Random();
         private Krolowa krolowa;
         private StingPatrol s;
         public Form1()
@@ -59,7 +59,7 @@ namespace Dziedziczenie_Ul
 
         private void WorkNextShift_Click(object sender, EventArgs e)
         {
-            report.Text = krolowa.WorkTheNextShift(); s.Sting();
+            report.Text = krolowa.WorkTheNextShift(); s.Sting(random);
         }
 
         private void PrzypiszPrace_Click(object sender, EventArgs e)

@@ -7,6 +7,7 @@ namespace Dziedziczenie_Ul
 {
     class StingPatrol:Robotnica
     {
+       
         public int StingerLength { get; private set; }
         public int AlertLevel { get; set; }
         public bool SharpenStinger(int Length)
@@ -22,14 +23,14 @@ namespace Dziedziczenie_Ul
         else
             return false;
         }
-        public void Sting() {
-            Random xx = new Random();
+        public void Sting(Random random) {
+            
           
-           int  isEnemy = xx.Next(0, 1);
+           int  isEnemy = random.Next(0, 1);
 
             if (LookForEnemies(isEnemy))
             {
-                AlertLevel = xx.Next(0, 5);
+                AlertLevel = random.Next(0, 5);
       
             switch (AlertLevel)
                 {

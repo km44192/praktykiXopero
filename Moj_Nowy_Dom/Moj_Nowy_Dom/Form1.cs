@@ -49,7 +49,7 @@ namespace Moj_Nowy_Dom
 
             frontyard = new OutsideWithDoor("Podwórko przed domem", false, "dębowe drzwi z mosiężną klamką");
             backyard = new OutsideWithDoor("Podwórko za domem", true, "drzwi przesówne");
-            garden = new OutSideWithHidingPlace("Ogród",false, "szopa");
+           // garden = new OutSideWithHidingPlace("Ogród",false, "szopa");
             masterBedroom = new RoomWithHidingPlace("głowna sypialnia", "Łóżko z podstawą dębową", "Szafa na ubrania");
             secondBedroom =new RoomWithHidingPlace("sypialnia gościnna", "Szafa z hebanowego australijskiego klonowca", "wersalka");
             hallway = new RoomWithHidingPlace("Hol", "Bordowe ściany z kinkietami", "kanciapa");
@@ -71,6 +71,7 @@ namespace Moj_Nowy_Dom
             frontyard.Exits = new Location[] { backyard, garden,driveway };
             backyard.Exits = new Location[] { frontyard, garden,driveway };
             garden.Exits = new Location[] { frontyard, backyard };
+            driveway.Exits = new Location[] { frontyard, backyard };
 
             livingRoom.DoorLocation = frontyard;
             frontyard.DoorLocation = livingRoom;
@@ -145,9 +146,13 @@ namespace Moj_Nowy_Dom
 
         private void Take_Cover_Click(object sender, EventArgs e)
         {
+           
+           
             Take_Cover.Visible = false;
-            for (int i = 1; i <= 10; i++)   
-            { opponent.Move();
+           for(int i=1;i<=10;i++)
+            {
+             
+                opponent.Move();
                 description.Text = i + "...";
                 Application.DoEvents();
                 System.Threading.Thread.Sleep(200);
