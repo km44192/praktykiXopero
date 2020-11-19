@@ -1,0 +1,71 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30621.155
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hexdump", "hexdump\hexdump\hexdump.csproj", "{05731940-87AE-4AE8-8E20-068EA7031169}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gra_przygodowa", "Gra_przygodowa\Gra_przygodowa\Gra_przygodowa.csproj", "{46FD38CD-5325-47E1-9297-E9A67DDC2938}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zapis_odczyt_binarny", "Zapis_odczyt_binarny\Zapis_odczyt_binarny\Zapis_odczyt_binarny.csproj", "{A1A78A88-E5F7-490D-8615-87026E0D6C59}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kodowanie_znakow", "Kodowanie_znakow\Kodowanie_znakow\Kodowanie_znakow.csproj", "{E9EEDF0F-88E0-4ABA-BFF7-F9E7734F138D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serializacja_Do_Pliku", "Serializacja_Do_Pliku\Serializacja_Do_Pliku\Serializacja_Do_Pliku.csproj", "{793AFE8F-10E3-4C7C-A96E-BD73377DB346}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wymowki", "Wymowki\Wymowki\Wymowki.csproj", "{34986035-435C-45EA-9A46-D7151156EB60}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strumienie_plików", "Strumienie_plików\Strumienie_plików\Strumienie_plików.csproj", "{80947341-EB05-4CD8-9805-EC2191F51D57}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Okno_dialogowe", "Okno_dialogowe\Okno_dialogowe\Okno_dialogowe.csproj", "{86497821-9BF0-4E5C-BBE3-30FA823DF192}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "filestream", "FileStream\FileStream\filestream.csproj", "{5FB1898D-4FC1-4397-9FC0-5B0BF9352CCA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LumberJack", "LumberJack\LumberJack\LumberJack.csproj", "{430AA9AA-E4F5-487B-973C-EAE6A354550D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kolekcje", "Kolekcje\Kolekcje\Kolekcje.csproj", "{C02D83EE-4473-4163-A0AD-888616BB085E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Idz_na_ryby", "Idz_na_ryby\Idz_na_ryby\Idz_na_ryby.csproj", "{3C185F07-CA12-46A2-B10E-36E2688CF1E3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gra_Karciana", "Gra_Karciana\Gra_Karciana\Gra_Karciana.csproj", "{DF585A51-2367-4A30-BEE3-A07BE0798305}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Talia_Kart", "Talia_Kart\Talia_Kart\Talia_Kart.csproj", "{B44023E3-E9B4-43D6-9634-02F4EA68B7D0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lista_butów", "Lista_butów\Lista_butów\Lista_butów.csproj", "{EF7D1131-79E6-4771-AD93-4603D7C145D8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pola_Wyliczeniowe", "Pola_Wyliczeniowe\Pola_Wyliczeniowe\Pola_Wyliczeniowe.csproj", "{E566E6F6-F528-4C20-92F4-05B5FA6D50BC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moj_Nowy_Dom", "Moj_Nowy_Dom\Moj_Nowy_Dom\Moj_Nowy_Dom.csproj", "{E6692391-9D3C-427E-B8E1-F397EA912A7C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlanetMission", "PlanetMission\PlanetMission\PlanetMission.csproj", "{BA1A18AC-CC20-4B17-9F69-94DEF0D14BD2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Księgarnia", "Księgarnia\Księgarnia\Księgarnia.csproj", "{561BD33F-9A06-473E-ADFD-A4AE0FA8D841}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Urządzenia_Elektryczne", "Urządzenia_Elektryczne\Urządzenia_Elektryczne\Urządzenia_Elektryczne.csproj", "{8E4F79D0-5776-432F-A4EC-973C0DF5B388}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cyrk_Interfacy", "Cyrk_Interfacy\Cyrk_Interfacy\Cyrk_Interfacy.csproj", "{74768277-3EEC-4A02-B7BA-9757D87228CF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfejsy_UL", "Interfejsy_UL\Interfejsy_UL\Interfejsy_UL.csproj", "{33877882-E6FD-4224-AAB3-F12F31AFE42E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dziedziczenie_Ul", "Dziedziczenie_Ul\Dziedziczenie_Ul\Dziedziczenie_Ul.csproj", "{EDF5F386-EC35-4AD5-A4A1-E125AA869413}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dzidziczenie_rozdzial6", "Dzidziczenie_rozdzial6\Dzidziczenie_rozdzial6\Dzidziczenie_rozdzial6.csproj", "{65705554-0339-435B-A621-D0A8BD030414}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jubiler_i_zlodziej", "Jubiler_i_zlodziej\Jubiler_i_zlodziej\Jubiler_i_zlodziej.csproj", "{82E15045-A36A-429D-B369-5295B8EC8666}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZOO", "ZOO\ZOO\ZOO.csproj", "{54C299C2-BA6B-4AF6-8178-91BAA31E5E8D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HermetyzacjaFarma", "HermetyzacjaFarma\HermetyzacjaFarma\HermetyzacjaFarma.csproj", "{99523E02-4C59-4011-A67C-E77F2222A7AA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KodAgent", "KodAgent\KodAgent\KodAgent.csproj", "{5BEFB6D4-46DE-4FF5-BBCF-00B24D6A478B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planowanie_przyjęcia", "Planowanie_przyjęcia\Planowanie_przyjęcia\Planowanie_przyjęcia.csproj", "{8C433A54-1739-44D2-A502-10178FA12C4C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zakład_buchmakerski", "zakład_buchmakerski\zakład_buchmakerski\zakład_buchmakerski.csproj", "{0F98B46D-6963-4374-A6F7-DEA99061EBD4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wyścig", "Wyścig\Wyścig\Wyścig.csproj", "{0425753D-C373-4A9A-A98D-FFF26FEA5F06}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Klikacz", "Klikacz\Klikacz\Klikacz.csproj", "{F8184D5E-BAA7-49EE-97A7-B54DFED826AA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tablice", "Tablice\Tablice\Tablice.csproj", "{92560F7C-9F80-4F7E-B6EC-86C7D6A82DF1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elephant", "Elephant\Elephant\Elephant.csproj", "{6839D8E7-5AD1-45AB-9163-4B07AAD71E68}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rachunki_za_paliwo", "Rachunki_za_paliwo\Rachunki_za_paliwo\Rachunki_za_paliwo.csproj", "{6E6411D5-7FAA-476A-BABA-FB817BE24966}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Banking", "Banking\Banking\Banking.csproj", "{DC455E1A-3B69-4FF7-8797-B8BF1984DF88}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fabryka_batonow", "Fabryka_batonow\Fabryka_batonow\Fabryka_batonow.csproj", "{A36D1A39-081C-4570-AA14-1080A570B614}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Klauny", "Klauny\Klauny\Klauny.csproj", "{21CE9FFF-B9F4-49A5-A096-413F68C47B86}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Navigator", "Navigator\Navigator\Navigator.csproj", "{85A13796-B72C-4735-B545-6E068486D841}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Powtarzanie_slow", "Powtarzanie_slow\Powtarzanie_slow\Powtarzanie_slow.csproj", "{9D0864DB-69B9-4E4B-95C3-2AECDE5FB701}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diaboliczne_kolory", "Diaboliczne_kolory\Diaboliczne_kolory\Diaboliczne_kolory.csproj", "{596EEA84-5324-4627-A310-E34AD35C8CE1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Popup_i_zakotwiczenie_WFApp", "Popup_i_zakotwiczenie_WFApp\Popup_i_zakotwiczenie_WFApp\Popup_i_zakotwiczenie_WFApp.csproj", "{C55BE5A6-289B-44E3-9BDE-B86356D182F3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wlasna_apka_xaml", "Wlasna_apka_xaml\Wlasna_apka_xaml\Wlasna_apka_xaml.csproj", "{ACDF2F17-400C-4442-8097-7C0C518C7EF9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TenObcy", "TenObcy\TenObcy\TenObcy.csproj", "{479ABBF5-6381-4DF6-B99E-42D13414B138}"
+
+
+
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{05731940-87AE-4AE8-8E20-068EA7031169}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05731940-87AE-4AE8-8E20-068EA7031169}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05731940-87AE-4AE8-8E20-068EA7031169}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05731940-87AE-4AE8-8E20-068EA7031169}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4F026339-2D99-479F-BC5D-6C7036A77C17}
+	EndGlobalSection
+EndGlobal
