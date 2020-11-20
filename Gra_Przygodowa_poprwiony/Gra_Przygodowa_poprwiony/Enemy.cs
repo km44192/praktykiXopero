@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-//using System.Drawing;
-using System.Windows;
+using System.Drawing;
 
-namespace Gra_przygodowa
+namespace Gra_Przygodowa_poprwiony
 {
     abstract class Enemy : Mover
     {
@@ -25,7 +24,7 @@ namespace Gra_przygodowa
         {
             return (Nearby(game.PlayerLocation, NearPlayerDistance));
         }
-        protected Direction FindPlayerDirection(System.Windows.Point playerLocation)
+        protected Direction FindPlayerDirection(Point playerLocation)
         {
             Direction directionToMove;
             if (playerLocation.X > location.X + 10)
@@ -42,24 +41,24 @@ namespace Gra_przygodowa
 
     class Bat:Enemy
     {
-        public Bat(Game game,Point location) : base(game, location, 6)
+        public Bat(Game game, Point location) : base(game, location, 6)
         {
 
         }
         public override void Move(Random random)
         {
-           int mv = random.Next(0, 1);
-         if(mv==1 && this.HitPoints>1)
+           int mv = random.Next(0, 2);
+         if(mv==1 && HitPoints>1)
             {if (NearPlayer())
                     game.HitPlayer(2, random);
                 else
                 {
-                    Move(FindPlayerDirection(game.PlayerLocation), game.Bounderies);
+                   location= Move(FindPlayerDirection(game.PlayerLocation), game.Bounderies);
                 }
             }
             else
             {
-                Move((Direction)random.Next(4), game.Bounderies);
+              location=  Move((Direction)random.Next(4), game.Bounderies);
 
             }
         }
@@ -75,13 +74,13 @@ namespace Gra_przygodowa
         public override void Move(Random random)
         {
                 int mv = random.Next(0, 3);
-                if (mv == 1 && this.HitPoints > 0)
+                if (mv == 1 && HitPoints > 0)
                 {
                     if (NearPlayer())
                         game.HitPlayer(3, random);
                     else
                     {
-                        Move(FindPlayerDirection(game.PlayerLocation), game.Bounderies);
+                     location = Move(FindPlayerDirection(game.PlayerLocation), game.Bounderies);
                     }
                 }
             
@@ -90,26 +89,28 @@ namespace Gra_przygodowa
     }
     class Ghul : Enemy
     {
-        public Ghul(Game game,Point Location) : base(game, Location, 10) { }
+        public Ghul(Game game, Point Location) : base(game, Location, 10) { }
 
         public override void Move(Random random)
         {
-            if (this.HitPoints > 0) { 
-                int mv = random.Next(0, 3);
+            if (this.HitPoints > 0)
+            {
+                int mv = random.Next(1, 3);
                 if (mv == 1 || mv == 2)
                 {
                     if (NearPlayer())
                         game.HitPlayer(4, random);
                     else
                     {
-                        Move(FindPlayerDirection(game.PlayerLocation), game.Bounderies);
+                     location=  Move(FindPlayerDirection(game.PlayerLocation), game.Bounderies);
                     }
                 }
                 else
                 {
-                    Move((Direction)random.Next(4), game.Bounderies);
+                  location = Move((Direction)random.Next(4), game.Bounderies);
 
                 }
+
             }
         }
     }

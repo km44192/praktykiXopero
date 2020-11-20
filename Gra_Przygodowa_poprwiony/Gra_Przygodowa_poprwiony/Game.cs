@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-//using System.Drawing;
-using System.Windows;
+using System.Drawing;
 
-namespace Gra_przygodowa
+namespace Gra_Przygodowa_poprwiony
 {
     class Game
     {
@@ -19,11 +18,11 @@ namespace Gra_przygodowa
         public ICollection<string> PlayerWeapons { get { return player.Weapons; } }
         private int level = 0;
         public int Level { get { return level; } }
-        private Rect bounderies;
-        public Rect Bounderies { get { return bounderies; } }
+        private Rectangle bounderies;
+        public Rectangle Bounderies { get { return bounderies; } }
 
 
-        public Game(Rect bounderies)
+        public Game(Rectangle bounderies)
         {
             this.bounderies = bounderies;
             player = new Player(this, new Point(bounderies.Left + 10, bounderies.Top + 70));
@@ -37,7 +36,9 @@ namespace Gra_przygodowa
             }
         }
         public void Equip(string weaponName)
-        {
+        {   
+           
+            PlayerWeapons.Add(weaponName);
             player.Equip(weaponName);
         }
         public bool CheckPlayerInventory(string weaponName)
@@ -63,7 +64,7 @@ namespace Gra_przygodowa
 
         private Point GetRandomLocation(Random random)
         {
-            return new Point(Bounderies.Left+random.Next((int)(Bounderies.Right/10-Bounderies.Left/10))*10, Bounderies.Top + random.Next((int)(Bounderies.Bottom / 10 - Bounderies.Top / 10)) * 10);
+            return new Point(Bounderies.Left+random.Next(Bounderies.Right/10-Bounderies.Left/10)*10, Bounderies.Top + random.Next(Bounderies.Bottom / 10 - Bounderies.Top / 10) * 10);
         }
         public void NewLevel(Random random)
         {
@@ -72,8 +73,9 @@ namespace Gra_przygodowa
             {
                 case 1:
                     Enemies = new List<Enemy>();
-               //     Enemies.Add(new Bat(new Game(Bounderies),GetRandomLocation(random)));
-                //   WeaponInRoom = new Sword(this, GetRandomLocation(random));
+                    Enemies.Add(new Bat(this,GetRandomLocation(random)));
+                    Enemies.Add(new Ghost(this, GetRandomLocation(random)));
+                  WeaponInRoom = new Sword(this, GetRandomLocation(random));
 
                     break;
             }

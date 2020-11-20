@@ -18,4 +18,4 @@ Start 16-11-2020 10:00 Koniec 16-11-2020 18:00 Koniec rozdziału 8 początek 9 (
 Start 17-11-2020 10:00 Koniec 17-11-2020 18:00 Koniec zadania z rozdziału 9
 Start 18-11-2020 10:00 Koniec 18-11-2020 18:00 Koniec rozdziału 9 rozpoczęcie pracy nad grą przygodową
 Start 19-11-2020 11:00 Koniec 19-11-2020 19:00 Prace nad grą_przygodową
-Start 20-11-2020
+Start 20-11-2020 10:00 Koniec 20-11-2020 18:00 Dlasze prace nad grą_przygodową

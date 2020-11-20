@@ -7,19 +7,14 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="550" Width="800
         ">
-    <Canvas x:Name="canvas">
+    <Canvas>
         <Grid>
-            <Image HorizontalAlignment="Center" Height="550" VerticalAlignment="Center" Width="800" Source="/dungeon600x400.png" RenderTransformOrigin="0.5,0.5">
-                <Image.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="0"/>
-                        <TranslateTransform X="-1"/>
-                    </TransformGroup>
-                </Image.RenderTransform>
+            <Image x:Name="bg" HorizontalAlignment="Center" Height="550" VerticalAlignment="Center" Width="800" Source="/dungeon600x400.png" RenderTransformOrigin="0.5,0.5">
+
             </Image>
+
             <Label Content="Gracz" HorizontalAlignment="Left" Margin="519,328,0,0" VerticalAlignment="Top"/>
+
             <Label Content="Nietoperz" HorizontalAlignment="Left" Margin="519,345,0,0" VerticalAlignment="Top" />
             <Label Content="Duch" HorizontalAlignment="Left" Margin="519,361,0,0" VerticalAlignment="Top"/>
             <Label Content="Upiór" HorizontalAlignment="Left" Margin="519,377,0,0" VerticalAlignment="Top"/>
@@ -28,22 +23,15 @@
             <Label x:Name="GHealth"  Content="GHealth" HorizontalAlignment="Left" Margin="584,361,0,0" VerticalAlignment="Top"/>
             <Label x:Name="UHealth" Content="Uhealth" HorizontalAlignment="Left" Margin="584,377,0,0" VerticalAlignment="Top"/>
             <Grid>
-                <Image x:Name="isword" HorizontalAlignment="Left" Height="50" Margin="109,421,0,0" VerticalAlignment="Top" Width="50" Source="/sword.png" />
+                <Image x:Name="isword" HorizontalAlignment="Left" Height="50" Margin="109,421,0,0" VerticalAlignment="Top" Width="50" Source="/sword.png" Visibility="Visible" />
                 <Image x:Name="ipow" HorizontalAlignment="Left" Height="50" Margin="166,422,0,0" VerticalAlignment="Top" Width="50" Source="/bow.png"/>
                 <Image x:Name="sheal" HorizontalAlignment="Left" Height="50" Margin="282,421,0,0" VerticalAlignment="Top" Width="50" Source="/potion_blue.png"/>
                 <Image x:Name="icep" HorizontalAlignment="Left" Height="50" Margin="221,419,0,0" VerticalAlignment="Top" Width="50" Source="/mace.png"/>
                 <Image x:Name="duheal" HorizontalAlignment="Left" Height="50" Margin="331,424,0,0" VerticalAlignment="Top" Width="50" Source="/potion_red.png"/>
             </Grid>
-            <Image x:Name="Player" HorizontalAlignment="Left" Height="40" Margin="107,79,0,0" VerticalAlignment="Top" Width="40" Source="/player.png" RenderTransformOrigin="0.5,0.5">
-                <Image.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform/>
-                        <TranslateTransform X="0"/>
-                    </TransformGroup>
-                </Image.RenderTransform>
-            </Image>
+
+            <Image x:Name="Player" HorizontalAlignment="Left"   Height="40"  VerticalAlignment="Top" Width="40" Source="/player.png"  Margin="104,84,0,0"/>
+
             <Image x:Name="Bat" HorizontalAlignment="Left" Height="40" Margin="159,80,0,0" VerticalAlignment="Top" Width="40" Source="/bat.png"/>
             <Image x:Name="ghost" HorizontalAlignment="Left" Height="40" Margin="209,80,0,0" VerticalAlignment="Top" Width="40" Source="/ghost.png"/>
             <Image x:Name="banshee" HorizontalAlignment="Left" Height="40" Margin="247,80,0,0" VerticalAlignment="Top" Width="40" Source="/ghoul.png"/>
@@ -60,7 +48,7 @@
                 <Button x:Name="Top" Content="↑" HorizontalAlignment="Left" Margin="44,27,0,0" VerticalAlignment="Top" Width="25" Height="25" Click="Top_Click"/>
                 <Button x:Name="Down" Content="↓" HorizontalAlignment="Left" Margin="44,62,0,0" VerticalAlignment="Top" Width="25" Height="25" Click="Down_Click"/>
             </Grid>
-            <Grid x:Name="Atak" Margin="578,409,112,20">
+            <Grid x:Name="Atak" Margin="585,414,105,15">
                 <Label Content="Atak" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="4,-3,0,0"/>
                 <Button x:Name="Left1"  Content="←" HorizontalAlignment="Left" Margin="11,48,0,0" VerticalAlignment="Top" Height="25" Width="25" Click="Left1_Click"/>
 

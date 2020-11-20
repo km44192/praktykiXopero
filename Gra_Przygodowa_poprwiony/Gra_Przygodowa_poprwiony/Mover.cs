@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-//using System.Drawing;
-using System.Windows;
-namespace Gra_przygodowa
+using System.Drawing;
+
+namespace Gra_Przygodowa_poprwiony
 {
     public enum Direction
     {
@@ -36,7 +36,7 @@ namespace Gra_przygodowa
             
         }
 
-        public Point Move(Direction direction,Rect bounderies)
+        public Point Move(Direction direction,Rectangle bounderies)
         {
             Point newLocation = location;
             switch (direction)

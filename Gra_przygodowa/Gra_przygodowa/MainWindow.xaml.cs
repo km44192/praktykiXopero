@@ -12,14 +12,12 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Drawing;
+//using System.Drawing;
 
 
 namespace Gra_przygodowa
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+   
     public partial class MainWindow : Window
     {
         private Game game;
@@ -29,7 +27,7 @@ namespace Gra_przygodowa
         public MainWindow()
         {
             InitializeComponent();
-            game = new Game(new System.Drawing.Rectangle(78, 57, 420, 155));
+            game = new Game(new Rect(78, 57, 420, 155));
             game.NewLevel(random);
             UpdateCharacters();
         }
@@ -37,14 +35,17 @@ namespace Gra_przygodowa
         private void UpdateCharacters()
         {
             player = new Player(game, game.PlayerLocation);
-            icep.IsEnabled = false;
-            isword.IsEnabled = false;
+            icep.Visibility = Visibility.Hidden;
+            isword.Visibility = Visibility.Hidden;
+            ipow.Visibility = Visibility.Hidden;
+            sheal.Visibility = Visibility.Hidden;
+            duheal.Visibility = Visibility.Hidden;
             PHealth.Content = player.HitPoints;
             GHealth.Content = "0";
             Nhealth.Content = "0";
             UHealth.Content = "0";
-            Player.TranslatePoint()
             
+        
         }
         //Atak
         private void Right1_Click(object sender, RoutedEventArgs e)
@@ -70,27 +71,27 @@ namespace Gra_przygodowa
         private void Top_Click(object sender, RoutedEventArgs e)
         {
             player.Move(Direction.Up);
-            Canvas.SetTop(Player, player.Location.Y);
 
+            MessageBox.Show(Player.Margin.ToString());
         }
        
         private void Down_Click(object sender, RoutedEventArgs e)
         {
         
             player.Move(Direction.Down);
-            Canvas.SetTop(Player, player.Location.Y);
+            Player.TranslatePoint(player.Location, bg);
         }
 
         private void Right_Click(object sender, RoutedEventArgs e)
         {
             player.Move(Direction.Right);
-            Canvas.SetLeft(Player, player.Location.X);
+            //Canvas.SetLeft(Player, player.Location);
         }
 
         private void Left_Click(object sender, RoutedEventArgs e)
         {
             player.Move(Direction.Left);
-            Canvas.SetLeft(Player, player.Location.Y);
+            MessageBox.Show(player.Location.ToString());
         }
     }
 }

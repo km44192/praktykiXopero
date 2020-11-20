@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-//using System.Drawing;
-using System.Windows;
+using System.Drawing;
 
-namespace Gra_przygodowa
+namespace Gra_Przygodowa_poprwiony
 {//pamiętaj aby dokończyć
    abstract class Weapon:Mover
     {
@@ -22,6 +21,7 @@ namespace Gra_przygodowa
         {
             if (Math.Abs(location.X - Plocation.X) < distance && Math.Abs(location.Y - Plocation.Y) < distance)
             {
+               
                 return true;
             }
             else
@@ -36,7 +36,7 @@ namespace Gra_przygodowa
 
         protected bool DamageEnemy(Direction direction,int radius,int damage,Random random)
         {
-            System.Windows.Point target = game.PlayerLocation;
+            Point target = game.PlayerLocation;
             for(int distance = 0; distance < radius; distance++)
             {
                 foreach(Enemy enemy in game.Enemies)

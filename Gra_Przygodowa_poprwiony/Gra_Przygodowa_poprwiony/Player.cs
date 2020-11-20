@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-//using System.Drawing;
-using System.Windows;
-namespace Gra_przygodowa
+using System.Drawing;
+
+namespace Gra_Przygodowa_poprwiony
 {
     class Player:Mover
     {
@@ -38,6 +38,7 @@ namespace Gra_przygodowa
         }
         public void Equip(string weaponName)
         {
+           
             foreach(Weapon weapon in inventory)
             {
                 if (weapon.Name == weaponName)
@@ -46,15 +47,24 @@ namespace Gra_przygodowa
         }
         public void Move(Direction direction)
         {
-            base.location = Move(direction, game.Bounderies);
-            //if (!game.WeaponInRoom.PickedUp)
-          //  {
-
-           // }
+            
+            if (!game.WeaponInRoom.PickedUp)
+            {
+                base.location = Move(direction, game.Bounderies);
+            }
+            else
+            {
+                game.WeaponInRoom.PickUpWeapon();
+            }
         }
         public void Attack(Direction direction,Random random)
         {
-            equippedWeapon.Attack(direction, random);
+            foreach(Weapon weapon in inventory)
+            {
+                if (equippedWeapon == weapon)
+                    equippedWeapon.Attack(direction, random);
+            }
+
         }
     }
 }
