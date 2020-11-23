@@ -71,6 +71,7 @@
             this.IleGosci.Name = "IleGosci";
             this.IleGosci.Size = new System.Drawing.Size(120, 23);
             this.IleGosci.TabIndex = 2;
+            this.IleGosci.ValueChanged += new System.EventHandler(this.kwota_Click);
             // 
             // fit
             // 

@@ -38,12 +38,11 @@ namespace Gra_Przygodowa_poprwiony
         }
         public void Equip(string weaponName)
         {
-           
-            foreach(Weapon weapon in inventory)
-            {
-                if (weapon.Name == weaponName)
-                    equippedWeapon = weapon;
-            }
+            equippedWeapon = game.WeaponInRoom;
+
+            if(!inventory.Contains(game.WeaponInRoom))
+            inventory.Add(game.WeaponInRoom);
+          
         }
         public void Move(Direction direction)
         {
@@ -54,15 +53,16 @@ namespace Gra_Przygodowa_poprwiony
             }
             else
             {
-                game.WeaponInRoom.PickUpWeapon();
+                base.location = Move(direction, game.Bounderies);
+                game.WeaponInRoom.Move(direction, game.Bounderies);
             }
         }
         public void Attack(Direction direction,Random random)
         {
             foreach(Weapon weapon in inventory)
             {
-                if (equippedWeapon == weapon)
-                    equippedWeapon.Attack(direction, random);
+               if(weapon==equippedWeapon)
+                    weapon.Attack(direction, random);
             }
 
         }

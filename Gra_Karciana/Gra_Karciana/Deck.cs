@@ -27,26 +27,23 @@ namespace Talia_Kart
                 string nextCard = reader.ReadLine();
                 string[] cardParts = nextCard.Split(new char[] { ' ' });
                 Values value;
-                if (Enum.TryParse(cardParts[0], out value)) ;
-
+                if (Enum.TryParse(cardParts[0], out value))
+                { }
 
                 else
                 {
                     invalidCard = true;
                     break;
                 }
-                Suits suit = Suits.Clubs;
-             
-               
-                    switch (cardParts[1])
-                    {
-                        case "Spades": suit = Suits.Spades; break;
-                        case "Clubs": suit = Suits.Clubs; break;
-                        case "Hearts": suit = Suits.Hearts; break;
-                        case "Diamonds": suit = Suits.Diamonds; break;
-                        default: invalidCard = true; break;
+                Suits suit;
 
-                    }
+                if (Enum.TryParse(cardParts[1], out suit))
+                { }
+                else
+                {
+                    invalidCard = true; break;
+                }
+                    
                     if (!invalidCard)
                     {
                         talia.Add(new Card(suit, value));

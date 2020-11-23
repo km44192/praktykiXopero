@@ -40,6 +40,7 @@ namespace Gra_Przygodowa_poprwiony
            
             PlayerWeapons.Add(weaponName);
             player.Equip(weaponName);
+            
         }
         public bool CheckPlayerInventory(string weaponName)
         {

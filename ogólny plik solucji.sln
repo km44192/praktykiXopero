@@ -4,7 +4,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.30621.155
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hexdump", "hexdump\hexdump\hexdump.csproj", "{05731940-87AE-4AE8-8E20-068EA7031169}"
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gra_przygodowa", "Gra_Przygodowa_poprwiony\Gra_Przygodowa_poprwiony\Gra_Przygodowa_poprwiony.csproj", "{46FD38CD-5325-47E1-9297-E9A67DDC2938}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gra_przygodowa_poprwiony", "Gra_Przygodowa_poprwiony\Gra_Przygodowa_poprwiony\Gra_Przygodowa_poprwiony.csproj", "{46FD38CD-5325-47E1-9297-E9A67DDC2938}"
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zapis_odczyt_binarny", "Zapis_odczyt_binarny\Zapis_odczyt_binarny\Zapis_odczyt_binarny.csproj", "{A1A78A88-E5F7-490D-8615-87026E0D6C59}"
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kodowanie_znakow", "Kodowanie_znakow\Kodowanie_znakow\Kodowanie_znakow.csproj", "{E9EEDF0F-88E0-4ABA-BFF7-F9E7734F138D}"
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serializacja_Do_Pliku", "Serializacja_Do_Pliku\Serializacja_Do_Pliku\Serializacja_Do_Pliku.csproj", "{793AFE8F-10E3-4C7C-A96E-BD73377DB346}"

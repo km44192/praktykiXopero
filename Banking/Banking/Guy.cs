@@ -30,14 +30,36 @@ namespace Banking
             }
         
         }
-        public void takeout(int n) { MessageBox.Show("Bank zabrał " + n + " zł" + NameInfo() + "owi\n"); zmniejszstan(n); }
+        public void takeout(int n) {
+            try
+            {
+                MessageBox.Show("Bank zabrał " + n + " zł" + NameInfo() + "owi\n");
+                zmniejszstan(n);
+            }
+            catch(Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                MessageBox.Show("Niedozwolona operacja");
+                zmniejszstan(0);
+            }
+        }
         public void ReciveMoney(int rcv) {
 
-            
-            
+
+            try
+            {
                 MessageBox.Show((NameInfo() + " Dostał " + rcv + "\n"));
 
                 dodajstan(rcv);
+            }
+            catch(Exception e)
+            {
+                throw e;
+            }
+            finally { MessageBox.Show("Niedozowlona Operacja"); }
             
            
         }

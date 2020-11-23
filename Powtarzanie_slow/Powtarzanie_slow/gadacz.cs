@@ -13,12 +13,12 @@ namespace Powtarzanie_slow
 
             for (int i = 1; i <= ilepowt; i++)
             {
-                text1 = text1 + text + "\n";
+                text1 = text1 + text+"\n";
 
 
             }
             MessageBox.Show(text1);
-            return text1.Length;
+            return text1.Length-ilepowt;
 
         }
 

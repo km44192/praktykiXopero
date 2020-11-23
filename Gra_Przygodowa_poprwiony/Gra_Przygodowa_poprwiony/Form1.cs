@@ -18,14 +18,16 @@ namespace Gra_Przygodowa_poprwiony
         private Random random = new Random();
         Point x = new Point(0, 0);
         bool pick = false;
-    
+        int k = 0;
+        int b = 1;
+        int g = 1;
      
         public Form1()
         {
             InitializeComponent();
             game = new Game(new Rectangle(78, 57,580, 240));
             game.NewLevel(random);
-           
+            
             icep.Visible = false;
             isword.Visible = false;
             ibow.Visible = false;
@@ -39,12 +41,24 @@ namespace Gra_Przygodowa_poprwiony
             sword.Visible = false;
             bow.Visible = false;
             cep.Visible = false;
-            GhoHP.Text = "0";
-            BatHp.Text = "0";
-            BanHP.Text = "0";
-            sword.Location = game.WeaponInRoom.Location;
+
+            foreach (Enemy enemy in game.Enemies)
+            {
+
+                if (enemy is Bat)
+                        BatHp.Text = enemy.HitPoints.ToString();
+                else if (enemy is Ghost)
+                        GhoHP.Text = enemy.HitPoints.ToString();
+                else if (enemy is Ghul)
+                    BanHP.Text = enemy.HitPoints.ToString();
+                   
+                
+            }
+
             if (game.WeaponInRoom.Name == "Miecz")
                 sword.Visible = true;
+            else if (game.WeaponInRoom.Name == "Łuk")
+                bow.Visible = true;
             UpdateCharacters();
             PositionUpdate();
 
@@ -74,21 +88,26 @@ namespace Gra_Przygodowa_poprwiony
                 case "Miecz":
                     weaponControl = sword; break;
             }
-            if (game.WeaponInRoom.Nearby(game.PlayerLocation, 10)&& weaponControl.Visible)
-       //     {
-                
-                game.WeaponInRoom.PickUpWeapon();
-             //   game.Equip(weaponControl.Name);
-           //     pick = game.WeaponInRoom.PickedUp;
-             
-
-        //    }
+         
+            if (!game.WeaponInRoom.PickedUp)
+           {
+                pick = game.WeaponInRoom.Nearby(game.PlayerLocation, 20);
+                if (pick)
+                {
+                    game.WeaponInRoom.PickUpWeapon();
+                    game.Equip(game.WeaponInRoom.Name);
+                }
+                   
+           }
+            
             weaponControl.Location = game.WeaponInRoom.Location;
             if (game.WeaponInRoom.PickedUp)
             {
                 
                 weaponControl.Visible = false;
                 isword.Visible = true;
+                isword.BorderStyle = BorderStyle.FixedSingle;
+               
             }
             else
                 weaponControl.Visible = true;
@@ -102,36 +121,66 @@ namespace Gra_Przygodowa_poprwiony
 
         private void PositionUpdate()
         {
-
-            foreach(Enemy enemy in game.Enemies)
+            int suma = b + g;
+            if(suma!=0)
             {
+                foreach (Enemy enemy in game.Enemies)
+                {
 
-                if (enemy is Bat)
-                {
-                   
-                  
-                    Batt.Location = enemy.Location;
-                    BatHp.Text = enemy.HitPoints.ToString();
-                    if(enemy.HitPoints>0)
-                        Batt.Visible = true;
-                }
-                else if (enemy is Ghost)
-                {
-                    
-                    Ghost.Location = enemy.Location;
-                    GhoHP.Text = enemy.HitPoints.ToString();
-                    if (enemy.HitPoints > 0)
-                        Ghost.Visible = true;
-                }
-                else if (enemy is Ghul)
-                {
-                   
-                
-                    Banshee.Location = enemy.Location;
-                    BanHP.Text = enemy.HitPoints.ToString();
-                    if (enemy.HitPoints > 0)
+                    if (enemy is Bat)
+                    {
+
+
+                        if (enemy.HitPoints > 0 && !enemy.Dead)
+                        {
+                            b = 1;
+                            Batt.Visible = true;
+
+                            Batt.Location = enemy.Location;
+                            BatHp.Text = enemy.HitPoints.ToString();
+                        }
+                        else
+                        {
+                            b = 0;
+                            Batt.Visible = false;
+                            BatHp.Text = "0";
+                        }
+
+                    }
+                    else if (enemy is Ghost)
+                    {
+
+
+                        if (enemy.HitPoints > 0 && !enemy.Dead)
+                        {
+                            g = 1;
+                            Ghost.Location = enemy.Location;
+                            GhoHP.Text = enemy.HitPoints.ToString();
+                            Ghost.Visible = true;
+                        }
+                        else
+                        {
+                            g = 0;
+                            Ghost.Visible = false;
+                            GhoHP.Text = "0";
+                        }
+                    }
+                    else if (enemy is Ghul)
+                    {
+
+
+
+                        if (enemy.HitPoints > 0)
+                            Banshee.Location = enemy.Location;
+                        BanHP.Text = enemy.HitPoints.ToString();
                         Banshee.Visible = true;
+                    }
                 }
+            }
+            else
+            {
+                MessageBox.Show("Udało Ci się oczyścić pomieszczenie gratulacje");
+                Application.Exit();
             }
         }
 
@@ -195,6 +244,13 @@ namespace Gra_Przygodowa_poprwiony
             UpdateCharacters(); PositionUpdate();
         }
 
-       
+        private void isword_Click(object sender, EventArgs e)
+        {
+            if (isword.Visible)
+            {
+                game.Equip(game.WeaponInRoom.Name);
+                isword.BorderStyle = BorderStyle.FixedSingle;
+            }
+        }
     }
 }

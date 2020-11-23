@@ -47,7 +47,7 @@ namespace Planowanie_przyjęcia
                 decimal CakeCost;
                 if (CakeSize() == 20) CakeCost = 25.00M; else CakeCost = 75.00M;
                 totalCost += CakeCost;
-
+                if(!CakeWritingTooLong)
                 totalCost += (ActualLength * 0.25M);
 
 

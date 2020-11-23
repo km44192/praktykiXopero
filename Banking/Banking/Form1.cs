@@ -61,17 +61,34 @@ namespace Banking
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (OpPawel.Checked && opRoman.Checked) 
-            { 
-                Pawel.takeout(int.Parse(textBox1.Text));
-                Roman.takeout(int.Parse(textBox1.Text));
+            try
+            {
+                if (OpPawel.Checked && opRoman.Checked)
+                {
+                    Pawel.takeout(int.Parse(textBox1.Text));
+                    Roman.takeout(int.Parse(textBox1.Text));
+                }
+                else if (OpPawel.Checked)
+                    Pawel.takeout(int.Parse(textBox1.Text));
+                else if (opRoman.Checked)
+                    Roman.takeout(int.Parse(textBox1.Text));
+                opisPawel.Text = Pawel.NameInfo() + " posiada " + Pawel.AccountInf() + " zł \n";
+                opisRoman.Text = Roman.NameInfo() + " posiada " + Roman.AccountInf() + " zł \n";
             }
-            else if (OpPawel.Checked)
-                Pawel.takeout(int.Parse(textBox1.Text));
-            else if (opRoman.Checked)
-                Roman.takeout(int.Parse(textBox1.Text));
-            opisPawel.Text = Pawel.NameInfo() + " posiada " + Pawel.AccountInf() + " zł \n";
-            opisRoman.Text = Roman.NameInfo() + " posiada " + Roman.AccountInf() + " zł \n";
+            catch(Exception exp)
+            {   
+                Roman.takeout(0);
+                Pawel.takeout(0);
+                throw exp;
+               
+            }
+            finally
+            {
+                MessageBox.Show("Niedozwolona operacja");
+             
+            }
+            
+            
         }
 
         private void saveRoman_Click(object sender, EventArgs e)

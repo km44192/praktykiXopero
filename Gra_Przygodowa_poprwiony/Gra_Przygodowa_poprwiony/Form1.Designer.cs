@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.Player = new System.Windows.Forms.PictureBox();
             this.Left1 = new System.Windows.Forms.Button();
@@ -62,7 +61,6 @@
             this.BatHp = new System.Windows.Forms.Label();
             this.GhoHP = new System.Windows.Forms.Label();
             this.BanHP = new System.Windows.Forms.Label();
-        
             ((System.ComponentModel.ISupportInitialize)(this.Player)).BeginInit();
             this.grp1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -219,6 +217,7 @@
             this.isword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.isword.TabIndex = 8;
             this.isword.TabStop = false;
+            this.isword.Click += new System.EventHandler(this.isword_Click);
             // 
             // ibow
             // 
@@ -439,10 +438,6 @@
             this.BanHP.Size = new System.Drawing.Size(13, 15);
             this.BanHP.TabIndex = 16;
             this.BanHP.Text = "0";
-            // 
-            // timer1
-            // 
-       
             // 
             // Form1
             // 

@@ -47,19 +47,23 @@ namespace Gra_Przygodowa_poprwiony
         }
         public override void Move(Random random)
         {
-           int mv = random.Next(0, 2);
-         if(mv==1 && HitPoints>1)
-            {if (NearPlayer())
-                    game.HitPlayer(2, random);
+            if (!Dead)
+            {
+                int mv = random.Next(0, 2);
+                if (mv == 1 && HitPoints > 1)
+                {
+                    if (NearPlayer())
+                        game.HitPlayer(2, random);
+                    else
+                    {
+                        location = Move(FindPlayerDirection(game.PlayerLocation), game.Bounderies);
+                    }
+                }
                 else
                 {
-                   location= Move(FindPlayerDirection(game.PlayerLocation), game.Bounderies);
-                }
-            }
-            else
-            {
-              location=  Move((Direction)random.Next(4), game.Bounderies);
+                    location = Move((Direction)random.Next(4), game.Bounderies);
 
+                }
             }
         }
 
@@ -93,7 +97,7 @@ namespace Gra_Przygodowa_poprwiony
 
         public override void Move(Random random)
         {
-            if (this.HitPoints > 0)
+            if (!Dead)
             {
                 int mv = random.Next(1, 3);
                 if (mv == 1 || mv == 2)
@@ -112,6 +116,7 @@ namespace Gra_Przygodowa_poprwiony
                 }
 
             }
+                          
         }
     }
 }

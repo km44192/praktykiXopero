@@ -66,7 +66,7 @@ namespace Planowanie_przyjęcia
 
         private void NapisTort_TextChanged(object sender, EventArgs e)
         {
-            Uro.WriteAlert();
+           alert.Text=Uro.WriteAlert();
            
             Uro.CakeWriting = NapisTort.Text;
             wynik2.Text = Uro.Cost.ToString("C");

@@ -29,6 +29,8 @@ namespace Gra_Przygodowa_poprwiony
         }
         public Point Move(Direction direction,Point target,int distance)
         {
+           
+
             this.location.X = target.X;
             this.location.Y = target.Y;
             return location;
@@ -64,21 +66,9 @@ namespace Gra_Przygodowa_poprwiony
         public override string Name { get{ return "Miecz"; } }
         public override void Attack(Direction direction, Random random)
         {
-            if (!DamageEnemy(direction, 10, 3, random))
-            {
 
-                if (!DamageEnemy(direction + 1, 10, 3, random))
-                {
-                    if (!DamageEnemy((direction - 1), 10, 3, random))
-                    { }
-                    else
-                        DamageEnemy((direction - 1), 10, 3, random);
-                }
-                else
-                    DamageEnemy(direction + 1, 10, 3, random);
-            }
-            else
-                DamageEnemy(direction, 10, 3, random);
+            DamageEnemy(direction, 50, 3, random);
+           
 
 
         }
