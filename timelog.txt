@@ -20,3 +20,4 @@ Start 18-11-2020 10:00 Koniec 18-11-2020 18:00 Koniec rozdziału 9 rozpoczęcie 
 Start 19-11-2020 11:00 Koniec 19-11-2020 19:00 Prace nad grą_przygodową
 Start 20-11-2020 10:00 Koniec 20-11-2020 18:00 Dlasze prace nad grą_przygodową
 Start 23-11-2020 11:00 Koniec 23-11-2020 19:00 Prace nad programem do kopiowania plików
+Start 24-11-2020 11:00
