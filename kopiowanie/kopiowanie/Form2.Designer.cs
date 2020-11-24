@@ -64,11 +64,11 @@ namespace kopiowanie
             // 
             // Cancel
             // 
-            this.Cancel.Location = new System.Drawing.Point(251, 138);
+            this.Cancel.Location = new System.Drawing.Point(223, 138);
             this.Cancel.Name = "Cancel";
-            this.Cancel.Size = new System.Drawing.Size(56, 24);
+            this.Cancel.Size = new System.Drawing.Size(84, 24);
             this.Cancel.TabIndex = 1;
-            this.Cancel.Text = "Anuluj";
+            this.Cancel.Text = "Zatrzymaj";
             this.Cancel.UseVisualStyleBackColor = true;
             this.Cancel.Click += new System.EventHandler(this.cancelAsyncButton_Click);
             // 
@@ -78,8 +78,9 @@ namespace kopiowanie
             this.Pause.Name = "Pause";
             this.Pause.Size = new System.Drawing.Size(80, 23);
             this.Pause.TabIndex = 2;
-            this.Pause.Text = "Zatrzymaj";
+            this.Pause.Text = "Wznów";
             this.Pause.UseVisualStyleBackColor = true;
+            this.Pause.Click += new System.EventHandler(this.startAsyncButton_Click);
             // 
             // Postep
             // 

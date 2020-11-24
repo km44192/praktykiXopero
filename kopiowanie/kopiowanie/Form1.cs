@@ -39,16 +39,21 @@ namespace kopiowanie
 
 
   
-            folderBrowserDialog1.ShowDialog();
-            string k = folderBrowserDialog1.SelectedPath;
+            folderBrowserDialog2.ShowDialog();
+            string k = folderBrowserDialog2.SelectedPath;
           //  MessageBox.Show(k);
             textBox2.Text = k;
         }
 
         private void Copy_Click(object sender, EventArgs e)
         {
-            Form2 form = new Form2(textBox1.Text,textBox2.Text);
-            form.ShowDialog();
+            if (textBox2.Text.Length>0 )
+            {
+                Form2 form = new Form2(textBox1.Text, textBox2.Text);
+                form.ShowDialog();
+            }
+            else
+                MessageBox.Show("Nie podano ścieżki docelowej");
             
         }
     }

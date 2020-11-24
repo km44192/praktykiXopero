@@ -10,12 +10,17 @@ namespace kopiowanie
 {
     public partial class Form2 : Form
     {
-        public int size1 = 0;
-        public int size2 = 0;
-        public  long c = 0;
+       double  size1 = 0;
+        double size2 = 0;
+        
         private string d1 = "";
         private string d2 = "";
         private string afi = "";
+        private string[] dir1;
+        private string[] dir2;
+        private bool locked = false;
+        ManualResetEvent eventer;
+
         public Form2(string x,string y)
         {
             d1 = x;
@@ -25,55 +30,60 @@ namespace kopiowanie
             startAsyncButton_Click();
             backgroundWorker1.WorkerReportsProgress = true;
             backgroundWorker1.WorkerSupportsCancellation = true;
+            eventer = new ManualResetEvent(false);
             
         }
        
 
-
+        //Rozpoczęcie kopiowania
         private void startAsyncButton_Click()
         {
             if (backgroundWorker1.IsBusy != true)
             {
                 // Start the asynchronous operation.
+                resultLabel.Text = "Waiting for response";
                 backgroundWorker1.RunWorkerAsync();
             }
            
         }
-
+        //zatrzymania zadania na chwilę nie działa w 100%
         private void cancelAsyncButton_Click(object sender, EventArgs e)
         {
-            if (backgroundWorker1.WorkerSupportsCancellation == true)
-            {
-             
-                backgroundWorker1.CancelAsync();
-            }
+            resultLabel.Text = "Paused!";
+            locked = true;
+          
+    
+            
         }
-       
-     
+      
+
+
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            
+           
             BackgroundWorker worker = sender as BackgroundWorker;
-
-            string Source = d1;
+             dir1 = Directory.GetFiles(d1, "*.*", SearchOption.AllDirectories);
+             dir2 = Directory.GetFiles(d2, "*.*", SearchOption.AllDirectories);
+          
+        string Source = d1;
             string Desti = d2;
-    
-            string[] a = Directory.GetFiles(d1, "*.*",SearchOption.AllDirectories);
-    
-            for(int i = 0; i < a.Length; i++)
+
+          
+           
+            for(int i = 0; i < dir1.Length; i++)
             {
-                size1 =size1+ a[i].Length;
+                FileInfo finfo = new FileInfo(dir1[i]);
+                size1 = size1 + finfo.Length;
             }
-            
+          
 
             
-            
+           
 
-            MessageBox.Show(size1.ToString());
-            MessageBox.Show(size2.ToString());
             while (size1 >= size2)
             {
               
+
                 if (worker.CancellationPending == true)
                 {
                     e.Cancel = true;
@@ -96,22 +106,42 @@ namespace kopiowanie
             // Copy each file into the new directory.
             foreach (string dirpath in Directory.GetDirectories(source, "*", SearchOption.AllDirectories))
             {
-                
-                Directory.CreateDirectory(dirpath.Replace(source, target));
+             
+                    if(!Directory.Exists(dirpath.Replace(source,target)))
+                    Directory.CreateDirectory(dirpath.Replace(source, target));
             }
-
+    
             // Copy each subdirectory using recursion.
             foreach (string newpath in Directory.GetFiles(source,"*",SearchOption.AllDirectories))
-            {
+            {   if (locked == true)
+                    eventer.WaitOne();
+                else
+                {
+                    FileInfo tmp1;
+                    FileInfo tinfo = new FileInfo(newpath);
+                    size2 = size2 + tinfo.Length;
+                    int x = (int)((size2 / (size1)) * 50);
+                    worker.ReportProgress(x);
+                    //    MessageBox.Show((size2 / size1).ToString());
 
+                    //warunek sprawdzający czy istnieje
+                    //  MessageBox.Show(target.Contains(newpath.Replace(source, target)).ToString());
+                    if (!File.Exists(newpath.Replace(source, target)))
+                    {
 
-                afi = newpath;
-                size2 = size2 + newpath.Length;
-                worker.ReportProgress((size2*50)/ size1);
-               
-                File.Copy(newpath, newpath.Replace(source, target), true);
+                        File.Copy(newpath, newpath.Replace(source, target), true);
+                        afi = newpath.Replace(source, target);
 
-        
+                    }
+                    else
+                    {
+                      //  tmp1 = new FileInfo(newpath.Replace(source, target));
+                        //if (tinfo.Length == tmp1.Length)
+                          //  afi = newpath.Replace(source, target) + "...skipped";
+
+                    }
+                }
+              
             }
         
         
@@ -145,14 +175,20 @@ namespace kopiowanie
             {
                 resultLabel.Text = "Error: " + e.Error.Message;
             }
+            
             else
             {
                 resultLabel.Text = "Done!";
                 MessageBox.Show("Skopiowano");
-                Application.Exit();
+                //Application.ExitThread();
             }
         }
 
-      
+        private void startAsyncButton_Click(object sender, EventArgs e)
+        {
+            locked = false;
+            eventer.Set();
+            resultLabel.Text = "Resumed!";
+        }
     }
 }
