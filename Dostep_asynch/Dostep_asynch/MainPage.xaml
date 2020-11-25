@@ -1,0 +1,24 @@
+﻿<Page
+    x:Class="Dostep_asynch.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Dostep_asynch"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="720" Width="1280">
+
+    <Grid Margin="0,0,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="124*"/>
+            <RowDefinition Height="47*"/>
+
+        </Grid.RowDefinitions>
+
+        <StackPanel Margin="0,0,0,192" Grid.RowSpan="2" >
+        <TextBlock x:Name="Question" HorizontalAlignment="Center" Margin="0,36,0,0" Text="ppp" TextWrapping="Wrap" VerticalAlignment="Top" Height="94" Width="359" FontSize="25" TextAlignment="Center"/>
+            <TextBox x:Name="moment" Text="Chwila nr :" TextWrapping="Wrap" RenderTransformOrigin="0.059,-0.25" Width="266" Height="60" FontSize="25"/>
+            <Button Content="Pytanie?" HorizontalAlignment="Center" Margin="0,46,0,0" Click="Button_Click_1"/>
+        </StackPanel>
+    </Grid>
+</Page>

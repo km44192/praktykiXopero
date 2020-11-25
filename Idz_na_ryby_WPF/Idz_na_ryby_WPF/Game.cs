@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Windows.Forms;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
 
-namespace Idz_na_ryby
+namespace Idz_na_ryby_WPF
 {
     public  class Game
     {
@@ -90,11 +91,13 @@ namespace Idz_na_ryby
                     winners.Add(name, 1);
                         }
             int mostBooks = 0;
-            foreach(string name in winners.Keys)
-                if (winners[name] > mostBooks) 
-                mostBooks=winners[name];
+            foreach (string name in winners.Keys)
+            
+                if (winners[name] > mostBooks)
+                    mostBooks = winners[name];
                 bool tie = false;
                 string winnerList = "";
+            
 
                      foreach(string name in winners.Keys)
                 if (winners[name] == mostBooks)
@@ -105,7 +108,7 @@ namespace Idz_na_ryby
                     }
                     winnerList += name;
                 }
-            winnerList += ": " + mostBooks + " grupy";
+            winnerList += ": " + mostBooks + " grupy ";
 
             if (tie)
                 return "Remis pomiędzy " + winnerList;
@@ -123,7 +126,7 @@ namespace Idz_na_ryby
             string description = "";
             for(int i = 0; i < players.Count; i++)
             {
-                description += players[i].Name + " ma " + players[i].CardCount;
+                description += players[i].Name + " ma" + players[i].CardCount;
                 if (players[i].CardCount == 1)
                     description += " kartę\r\n";
                 else if (players[i].CardCount == 2 || players[i].CardCount == 3 || players[i].CardCount == 4)
