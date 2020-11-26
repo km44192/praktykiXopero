@@ -17,28 +17,17 @@ namespace kopiowanie
             InitializeComponent();
             
         }
-
-    
-
         private void textBox1_DoubleClick(object sender, EventArgs e)
         {
             folderBrowserDialog1.SelectedPath = @"C:\";
-           
-         
-          
             folderBrowserDialog1.ShowDialog();
             string k = folderBrowserDialog1.SelectedPath;
         //    MessageBox.Show(k);
-            textBox1.Text = k;
-          
+            textBox1.Text = k;   
         }
-
         private void textBox2_DoubleClick(object sender, EventArgs e)
         {
             folderBrowserDialog2.SelectedPath = @"C:\";
-
-
-  
             folderBrowserDialog2.ShowDialog();
             string k = folderBrowserDialog2.SelectedPath;
           //  MessageBox.Show(k);
@@ -47,7 +36,7 @@ namespace kopiowanie
 
         private void Copy_Click(object sender, EventArgs e)
         {
-            if (textBox2.Text.Length>0 )
+            if (textBox2.Text==folderBrowserDialog2.SelectedPath)
             {
                 Form2 form = new Form2(textBox1.Text, textBox2.Text);
                 form.ShowDialog();

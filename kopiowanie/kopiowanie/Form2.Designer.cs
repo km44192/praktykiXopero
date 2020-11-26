@@ -31,13 +31,13 @@ namespace kopiowanie
         private void InitializeBackgroundWorker()
         {
             backgroundWorker1.DoWork +=
-                new DoWorkEventHandler(backgroundWorker1_DoWork);
+                new DoWorkEventHandler(kopi.WorkOn);
             backgroundWorker1.RunWorkerCompleted +=
                 new RunWorkerCompletedEventHandler(
-            backgroundWorker1_RunWorkerCompleted);
+            kopi.WorkComplete);
             backgroundWorker1.ProgressChanged +=
                 new ProgressChangedEventHandler(
-            backgroundWorker1_ProgressChanged);
+            kopi.ProgrssChanged);
         }
         /// <summary>
         ///  Required method for Designer support - do not modify
@@ -70,7 +70,7 @@ namespace kopiowanie
             this.Cancel.TabIndex = 1;
             this.Cancel.Text = "Zatrzymaj";
             this.Cancel.UseVisualStyleBackColor = true;
-            this.Cancel.Click += new System.EventHandler(this.cancelAsyncButton_Click);
+            this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
             // 
             // Pause
             // 
@@ -80,7 +80,7 @@ namespace kopiowanie
             this.Pause.TabIndex = 2;
             this.Pause.Text = "Wznów";
             this.Pause.UseVisualStyleBackColor = true;
-            this.Pause.Click += new System.EventHandler(this.startAsyncButton_Click);
+            this.Pause.Click += new System.EventHandler(this.Pause_Click);
             // 
             // Postep
             // 
@@ -121,14 +121,13 @@ namespace kopiowanie
 
         #endregion
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
-        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog2;
+       
        
         private System.Windows.Forms.Label resultLabel;
         private System.Windows.Forms.Button Cancel;
         private System.Windows.Forms.Button Pause;
         private System.Windows.Forms.ProgressBar Postep;
-        private RichTextBox richTextBox1;
+      
         private RichTextBox cpfiles;
     }
 }
