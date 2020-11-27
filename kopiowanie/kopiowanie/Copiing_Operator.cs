@@ -15,20 +15,31 @@ namespace kopiowanie
 {   [Serializable]
     class Copiing_Operator
     {
-        double size1 = 0;
-        double size2 = 0;
-        private string d1 = "";
-        private string d2 = "";
-        private string afi = "";
-        private string[] dir1;
-        private string[] dir2;
-        private bool locked = false;
-        double bfsum;
+       public double size1 { get; set; }
+    public  double size2 { get; set; }
+        public string d1 { get; set; }
+        public string d2 { get; set; }
+        public string afi { get; set; }
+        public string[] dir1 { get; set; }
+        public string[] dir2 { get; set; }
+        public bool locked { get; set; }
+       public double bfsum { get; set; }
        public ManualResetEvent eventer { get; set; }
        public ProgressBar Postep { get; set; }
       public  RichTextBox cpfiles { get; set; }
        public Label resultLabel { get; set; }
       public  BackgroundWorker backgroundWorker1 { get; set; }
+
+
+
+        public Copiing_Operator()
+        {
+            size1 = 0;
+            size2 = 0;
+            d1 = "";
+            d2 = "";
+            afi = "";
+        }
         public void Begin()
         {
             if (backgroundWorker1.IsBusy != true)
@@ -198,12 +209,9 @@ namespace kopiowanie
                 dir2 = operat.dir2,
                 bfsum = operat.bfsum,
             };
-
-                
-           
             try
             {
-                FileIOPermission fileIOPermission = new FileIOPermission(FileIOPermissionAccess.AllAccess, @"C:\json.txt");
+                FileIOPermission fileIOPermission = new FileIOPermission(FileIOPermissionAccess.AllAccess, @"D:\json.txt");
                 fileIOPermission.Demand();
                 string toFile = JsonConvert.SerializeObject(worker);
                 JsonSerializer serializer = new JsonSerializer();
@@ -218,9 +226,7 @@ namespace kopiowanie
                         // {"ExpiryDate":new Date(1230375600000),"Price":0}
                         sw.Close();
                         writer.Close();
-                        
                     }
-
             }
             catch (SecurityException m)
             {
