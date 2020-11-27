@@ -23,4 +23,4 @@ Start 23-11-2020 11:00 Koniec 23-11-2020 19:00 Prace nad programem do kopiowania
 Start 24-11-2020 11:00 Koniec 24-11-2020 19:30 Program do kopiowania wersja v0.5
 Start 25-11-2020 11:00 Koniec 25-11-2020 19:00 Tworzenie aplikacji asynchronicznych rozdział 11
 Start 26-11-2020 12:30 Koniec 26-11-2020 20:30 Poprawianie błędów w aplikacji kopiowanie
-Start 26-11-2020 14:00
+Start 26-11-2020 14:00 Koniec 27-11-2020 22:00 Poprawa aplikacji kopiowania

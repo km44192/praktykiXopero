@@ -12,8 +12,10 @@ namespace kopiowanie
 {
     public partial class Form1 : Form
     {
+        Copiing_Operator copiing = new Copiing_Operator();
         public Form1()
         {
+            
             InitializeComponent();
             
         }
@@ -38,7 +40,8 @@ namespace kopiowanie
         {
             if (textBox2.Text==folderBrowserDialog2.SelectedPath)
             {
-                Form2 form = new Form2(textBox1.Text, textBox2.Text);
+               copiing=copiing.ReadfromFile(@"D:/json.txt");
+                Form2 form = new Form2(textBox1.Text, textBox2.Text,copiing);
                 form.ShowDialog();
             }
             else

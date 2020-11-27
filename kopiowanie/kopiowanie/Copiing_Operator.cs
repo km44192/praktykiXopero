@@ -13,7 +13,7 @@ using System.Security;
 
 namespace kopiowanie
 {   [Serializable]
-    class Copiing_Operator
+    public class Copiing_Operator
     {
        public double size1 { get; set; }
     public  double size2 { get; set; }
@@ -223,7 +223,7 @@ namespace kopiowanie
                     using (JsonWriter writer = new JsonTextWriter(sw))
                     {
                         serializer.Serialize(writer, toFile);
-                        // {"ExpiryDate":new Date(1230375600000),"Price":0}
+                       
                         sw.Close();
                         writer.Close();
                     }
@@ -234,7 +234,33 @@ namespace kopiowanie
             }
            
         }
+        public Copiing_Operator ReadfromFile(string file_d)
+        {
+            Copiing_Operator copiWrite=new Copiing_Operator();
+            if (File.Exists(file_d))
+            {
 
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result;
+              result= MessageBox.Show("Wykryto niedokończoną sesję,\n Czy kontynuować","Odczyt",buttons);
+                if (result == DialogResult.Yes)
+                {
+                   
+                    using (StreamReader reader1 = new StreamReader(file_d))
+                    using (JsonReader reader = new JsonTextReader(reader1))
+                    {
+                        string datas = reader.ReadAsString();
+                        copiWrite = JsonConvert.DeserializeObject<Copiing_Operator>(datas);
+                    }
+                    File.Delete(file_d);
+                    return copiWrite;
+                }
+                else {
+                    File.Delete(file_d);
+                    return copiWrite; }
+            }
+            return copiWrite;
+        }
     }
  }
             

@@ -20,10 +20,13 @@ namespace kopiowanie
         Copiing_Operator kopi;
         
 
-        public Form2(string x,string y)
+        public Form2(string x,string y,Copiing_Operator files)
         {
-            kopi = new Copiing_Operator();
-            kopi.Get_directories(x, y);
+            kopi = files;
+            if (kopi.d1 != "" && kopi.d2 != "")
+                kopi.Get_directories(kopi.d1, kopi.d2);
+            else
+                kopi.Get_directories(x, y);
             InitializeComponent();
          
           
