@@ -15,8 +15,8 @@ namespace kopiowanie
 {   [Serializable]
     public class Copiing_Operator
     {
-       public double size1 { get; set; }
-    public  double size2 { get; set; }
+       public Int64 size1 { get; set; }
+    public  Int64 size2 { get; set; }
         public string d1 { get; set; }
         public string d2 { get; set; }
         public string afi { get; set; }
@@ -66,7 +66,7 @@ namespace kopiowanie
                 dir1 = Directory.GetFiles(d1, "*.*", SearchOption.AllDirectories);
                  dir2 = Directory.GetFiles(d2, "*.*", SearchOption.AllDirectories);
                 bfsum = Check_Sum(d1);
-                MessageBox.Show(bfsum.ToString());
+              //  MessageBox.Show(bfsum.ToString());
                 string Source = d1;
                 string Desti = d2;
                 for (int i = 0; i < dir1.Length; i++)
@@ -109,21 +109,29 @@ namespace kopiowanie
                         eventer.WaitOne();
                     else
                     {
-                        // FileInfo tmp1;
-                        FileInfo tinfo = new FileInfo(newpath);
-                        size2 = size2 + tinfo.Length;
-                        int x = (int)((size2 / (size1)) * 50);
-                        worker.ReportProgress(x);
-
-
-                        //warunek sprawdzający czy istnieje
-
-                        if (!File.Exists(newpath.Replace(source, target)))
+                        try
                         {
+                            // FileInfo tmp1;
+                            FileInfo tinfo = new FileInfo(newpath);
+                            size2 = size2 + tinfo.Length;
+                            int x = (int)((size2 / (size1)) * 50);
+                            worker.ReportProgress(x);
 
-                            File.Copy(newpath, newpath.Replace(source, target), true);
-                            afi = newpath.Replace(source, target);
 
+                            //warunek sprawdzający czy istnieje
+
+                            if (!File.Exists(newpath.Replace(source, target)))
+                            {
+
+                                File.Copy(newpath, newpath.Replace(source, target), true);
+                                afi = newpath.Replace(source, target);
+
+                            }
+                        }
+                        catch
+                        {
+                            afi = "File Coruppted skipping";
+                            break;
                         }
 
                     }
