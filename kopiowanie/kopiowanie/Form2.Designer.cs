@@ -112,6 +112,8 @@ namespace kopiowanie
             this.Controls.Add(this.Pause);
             this.Controls.Add(this.Cancel);
             this.Controls.Add(this.resultLabel);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form2";
             this.Text = "Form2";
             this.ResumeLayout(false);

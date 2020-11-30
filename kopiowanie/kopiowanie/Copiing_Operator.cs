@@ -176,6 +176,10 @@ namespace kopiowanie
                 {
                     resultLabel.Text = "Done!";
                     MessageBox.Show("Skopiowano");
+                    File.Delete(@"D:\json.txt");
+                    Application.Exit();
+                    System.Diagnostics.Process.Start("explorer.exe", d2);
+
                 }
                 else
                 {
@@ -245,15 +249,21 @@ namespace kopiowanie
               result= MessageBox.Show("Wykryto niedokończoną sesję,\n Czy kontynuować","Odczyt",buttons);
                 if (result == DialogResult.Yes)
                 {
-                   
-                    using (StreamReader reader1 = new StreamReader(file_d))
-                    using (JsonReader reader = new JsonTextReader(reader1))
+                    try
                     {
-                        string datas = reader.ReadAsString();
-                        copiWrite = JsonConvert.DeserializeObject<Copiing_Operator>(datas);
+                        using (StreamReader reader1 = new StreamReader(file_d))
+                        using (JsonReader reader = new JsonTextReader(reader1))
+                        {
+                            string datas = reader.ReadAsString();
+                            copiWrite = JsonConvert.DeserializeObject<Copiing_Operator>(datas);
+                        }
+                        File.Delete(file_d);
+                        return copiWrite;
                     }
-                    File.Delete(file_d);
-                    return copiWrite;
+                    catch(Exception errno)
+                    {
+                        throw errno;
+                    }
                 }
                 else {
                     File.Delete(file_d);

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace kopiowanie
 {
@@ -38,13 +39,35 @@ namespace kopiowanie
 
         private void Copy_Click(object sender, EventArgs e)
         {
-            if (textBox2.Text==folderBrowserDialog2.SelectedPath)
+            if (Directory.Exists(textBox2.Text))
             {
                copiing=copiing.ReadfromFile(@"D:/json.txt");
                 Form2 form = new Form2(textBox1.Text, textBox2.Text,copiing);
                 form.ShowDialog();
             }
-            else
+            else if (!Directory.Exists(textBox2.Text))
+            {
+                DialogResult result =MessageBox.Show("Taka ścieżka nie istnieje \n czy utworzyć?", "Ostrzeżenie", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                    try
+                    {
+                        Directory.CreateDirectory(textBox2.Text);
+                       
+                        Form2 form = new Form2(textBox1.Text, textBox2.Text, copiing);
+                        form.ShowDialog();
+                    }
+                    catch (Exception bld)
+                    {
+                        MessageBox.Show("Wykryto błędny folder,Folder docelowy To: " + folderBrowserDialog2.SelectedPath.ToString());
+                        textBox2.Text = folderBrowserDialog2.SelectedPath;
+                        throw bld;
+                    }
+                    
+                    
+
+                    
+            }
+            else if(textBox2.Text=="")
                 MessageBox.Show("Nie podano ścieżki docelowej");
             
         }
