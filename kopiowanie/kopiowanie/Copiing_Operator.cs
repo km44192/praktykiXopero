@@ -122,9 +122,10 @@ namespace kopiowanie
 
                             if (!File.Exists(newpath.Replace(source, target)))
                             {
-
-                                File.Copy(newpath, newpath.Replace(source, target), true);
                                 afi = newpath.Replace(source, target);
+                                File.Copy(newpath, newpath.Replace(source, target), false);
+                                
+                               
 
                             }
                         }
@@ -201,6 +202,7 @@ namespace kopiowanie
             locked = false;
             eventer.Set();
             resultLabel.Text= "Resumed!";
+            File.Delete(@"D:\json.txt");
         }
         public void Get_directories(string t1,string t2)
         {
