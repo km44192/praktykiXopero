@@ -97,7 +97,7 @@ namespace kopiowanie
         }
         private void CopyAll(string source, BackgroundWorker worker, string target)
         {
-            int x = 0;
+           
             try
             {
                 foreach (string dirpath in Directory.GetDirectories(source, "*", SearchOption.AllDirectories))
@@ -114,7 +114,7 @@ namespace kopiowanie
                     else
                     {
 
-
+                        string tmpstr = newpath.Replace(source, target);
 
 
                       
@@ -123,23 +123,23 @@ namespace kopiowanie
 
                         if (!File.Exists(newpath.Replace(source, target)))
                             {
-                            afi = newpath.Replace(source, target);
                             
                             File.Copy(newpath, newpath.Replace(source, target), true);
-
+                            if (tmpstr != afi)
+                                afi = newpath.Replace(source, target);
                             FileInfo tinfo1 = new FileInfo(newpath.Replace(source, target));
 
                             afi = afi +" "+tinfo1.Length.ToString();
                         }
                         FileInfo tinfo = new FileInfo(newpath.Replace(source, target));
                         size2 = size2 + tinfo.Length;
-                       x = (int)((size2 / size1) * 100);
-                       
-                        
-                                
+                       double w = (int)((size2 / size1) * 100);
+                        worker.ReportProgress(0, w);
+
+
 
                     }
-                    worker.ReportProgress(x);
+                   
 
                 }
 
@@ -165,9 +165,10 @@ namespace kopiowanie
 
        public void ProgrssChanged(object sender, ProgressChangedEventArgs e)
         {
-            resultLabel.Text = (e.ProgressPercentage.ToString() + "%");
-            if (e.ProgressPercentage > 0)
-                Postep.Value = (e.ProgressPercentage);
+            double elapsed = (double)e.UserState;
+            resultLabel.Text = elapsed.ToString() + "%";
+            if (elapsed>0)
+                Postep.Value = (int)elapsed;
             cpfiles.Text = cpfiles.Text + "\n" + afi;
         }
 

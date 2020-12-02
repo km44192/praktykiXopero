@@ -85,7 +85,6 @@ namespace kopiowanie
             // Postep
             // 
             this.Postep.Location = new System.Drawing.Point(58, 12);
-            this.Postep.Maximum = 101;
             this.Postep.Name = "Postep";
             this.Postep.Size = new System.Drawing.Size(274, 23);
             this.Postep.TabIndex = 3;
