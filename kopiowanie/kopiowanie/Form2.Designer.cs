@@ -85,6 +85,7 @@ namespace kopiowanie
             // Postep
             // 
             this.Postep.Location = new System.Drawing.Point(58, 12);
+            this.Postep.Maximum = 101;
             this.Postep.Name = "Postep";
             this.Postep.Size = new System.Drawing.Size(274, 23);
             this.Postep.TabIndex = 3;
@@ -116,6 +117,7 @@ namespace kopiowanie
             this.MinimizeBox = false;
             this.Name = "Form2";
             this.Text = "Form2";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form2_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

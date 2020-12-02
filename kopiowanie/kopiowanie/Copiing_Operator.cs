@@ -15,8 +15,8 @@ namespace kopiowanie
 {   [Serializable]
     public class Copiing_Operator
     {
-       public Int64 size1 { get; set; }
-    public  Int64 size2 { get; set; }
+       public double size1 { get; set; }
+    public  double size2 { get; set; }
         public string d1 { get; set; }
         public string d2 { get; set; }
         public string afi { get; set; }
@@ -69,13 +69,13 @@ namespace kopiowanie
               //  MessageBox.Show(bfsum.ToString());
                 string Source = d1;
                 string Desti = d2;
+               
                 for (int i = 0; i < dir1.Length; i++)
                 {
                     FileInfo finfo = new FileInfo(dir1[i]);
                     size1 = size1 + finfo.Length;
                 }
-                while (size1 >= size2)
-                {
+                while(size1>size2)
                     if (worker.CancellationPending == true)
                     {
                         e.Cancel = true;
@@ -83,9 +83,11 @@ namespace kopiowanie
                     }
                     else
                     {
+                       
+                        MessageBox.Show(size1.ToString());
                         CopyAll(Source, worker, Desti);
                     }
-                }
+                
             }
             catch(Exception w)
             {
@@ -95,6 +97,7 @@ namespace kopiowanie
         }
         private void CopyAll(string source, BackgroundWorker worker, string target)
         {
+            int x = 0;
             try
             {
                 foreach (string dirpath in Directory.GetDirectories(source, "*", SearchOption.AllDirectories))
@@ -105,37 +108,39 @@ namespace kopiowanie
 
                 foreach (string newpath in Directory.GetFiles(source, "*", SearchOption.AllDirectories))
                 {
+                   
                     if (locked == true)
                         eventer.WaitOne();
                     else
                     {
-                        try
-                        {
-                            // FileInfo tmp1;
-                            FileInfo tinfo = new FileInfo(newpath);
-                            size2 = size2 + tinfo.Length;
-                            int x = (int)((size2 / (size1)) * 50);
-                            worker.ReportProgress(x);
 
 
-                            //warunek sprawdzający czy istnieje
 
-                            if (!File.Exists(newpath.Replace(source, target)))
+
+                      
+
+                        //warunek sprawdzający czy istnieje
+
+                        if (!File.Exists(newpath.Replace(source, target)))
                             {
-                                afi = newpath.Replace(source, target);
-                                File.Copy(newpath, newpath.Replace(source, target), false);
-                                
-                               
+                            afi = newpath.Replace(source, target);
+                            
+                            File.Copy(newpath, newpath.Replace(source, target), true);
 
-                            }
+                            FileInfo tinfo1 = new FileInfo(newpath.Replace(source, target));
+
+                            afi = afi +" "+tinfo1.Length.ToString();
                         }
-                        catch
-                        {
-                            afi = "File Coruppted skipping";
-                            break;
-                        }
+                        FileInfo tinfo = new FileInfo(newpath.Replace(source, target));
+                        size2 = size2 + tinfo.Length;
+                       x = (int)((size2 / size1) * 100);
+                       
+                        
+                                
 
                     }
+                    worker.ReportProgress(x);
+
                 }
 
             }
@@ -185,7 +190,7 @@ namespace kopiowanie
                 {
                     resultLabel.Text = "Done!";
                     MessageBox.Show("Skopiowano");
-                    File.Delete(@"D:\json.txt");
+                    File.Delete(@"C:\ProgramData\json.txt");
                     Application.Exit();
                     System.Diagnostics.Process.Start("explorer.exe", d2);
 
@@ -202,7 +207,7 @@ namespace kopiowanie
             locked = false;
             eventer.Set();
             resultLabel.Text= "Resumed!";
-            File.Delete(@"D:\json.txt");
+            File.Delete(@"C:\ProgramData\json.txt");
         }
         public void Get_directories(string t1,string t2)
         {
@@ -225,15 +230,14 @@ namespace kopiowanie
             };
             try
             {
-                FileIOPermission fileIOPermission = new FileIOPermission(FileIOPermissionAccess.AllAccess, @"D:\json.txt");
-                fileIOPermission.Demand();
+               
                 string toFile = JsonConvert.SerializeObject(worker);
                 JsonSerializer serializer = new JsonSerializer();
                 serializer.NullValueHandling = NullValueHandling.Ignore;
-                if (!File.Exists(@"D:\json.txt"))
-                    File.Create(@"D:\json.txt");
+                if (!File.Exists(@"C:\ProgramData\json.txt"))
+                    File.Create(@"C:\ProgramData\json.txt");
                 else
-                    using (StreamWriter sw = new StreamWriter(@"D:\json.txt"))
+                    using (StreamWriter sw = new StreamWriter(@"C:\ProgramData\json.txt"))
                     using (JsonWriter writer = new JsonTextWriter(sw))
                     {
                         serializer.Serialize(writer, toFile);
@@ -277,7 +281,7 @@ namespace kopiowanie
                 }
                 else {
                     File.Delete(file_d);
-                    return copiWrite; }
+                    }
             }
             return copiWrite;
         }
